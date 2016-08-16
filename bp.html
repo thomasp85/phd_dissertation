@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Pangenome Tools for Rapid, Large-Scale Analysis of Bacterial Genomes</title>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+  <meta name="description" content="a dissertation submitted in partial fulfillment of the requirements for the degree of Doctor of Philosophy in Systems Biology">
+  <meta name="generator" content="bookdown 0.1.4 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Pangenome Tools for Rapid, Large-Scale Analysis of Bacterial Genomes" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="a dissertation submitted in partial fulfillment of the requirements for the degree of Doctor of Philosophy in Systems Biology" />
+  <meta name="github-repo" content="thomasp85/phd_dissertation" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Pangenome Tools for Rapid, Large-Scale Analysis of Bacterial Genomes" />
+  
+  <meta name="twitter:description" content="a dissertation submitted in partial fulfillment of the requirements for the degree of Doctor of Philosophy in Systems Biology" />
+  
+
+<meta name="author" content="Thomas Lin Pedersen">
+
+<meta name="date" content="2016-08-16">
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+</script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="hs.html">
+<link rel="next" href="discussion.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=EB+Garamond" />
+
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext" />
+
+
+
+<link rel="stylesheet" href="base_style.css" type="text/css" />
+<link rel="stylesheet" href="font_style.css" type="text/css" />
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Frontmatter</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#dedication"><i class="fa fa-check"></i>Dedication</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#abstract"><i class="fa fa-check"></i>Abstract</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#preface"><i class="fa fa-check"></i>Preface</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#work-not-part-of-this-dissertation"><i class="fa fa-check"></i>Work not part of this dissertation</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#preface-for-the-online-version"><i class="fa fa-check"></i>Preface for the online version</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#the-microbial-pangenome"><i class="fa fa-check"></i><b>1.1</b> The Microbial Pangenome</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="intro.html"><a href="intro.html#use-of-pangenomes"><i class="fa fa-check"></i><b>1.1.1</b> Use of Pangenomes</a></li>
+<li class="chapter" data-level="1.1.2" data-path="intro.html"><a href="intro.html#creation-of-pangenomes"><i class="fa fa-check"></i><b>1.1.2</b> Creation of Pangenomes</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#visualizing-genomic-information"><i class="fa fa-check"></i><b>1.2</b> Visualizing Genomic Information</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="intro.html"><a href="intro.html#visualizing-a-genome"><i class="fa fa-check"></i><b>1.2.1</b> Visualizing a Genome</a></li>
+<li class="chapter" data-level="1.2.2" data-path="intro.html"><a href="intro.html#showing-genome-relationships"><i class="fa fa-check"></i><b>1.2.2</b> Showing Genome Relationships</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="intro.html"><a href="intro.html#the-following-chapters"><i class="fa fa-check"></i><b>1.3</b> The Following Chapters</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="fmf.html"><a href="fmf.html"><i class="fa fa-check"></i><b>2</b> How to Build a Pangenome</a></li>
+<li class="chapter" data-level="3" data-path="pv.html"><a href="pv.html"><i class="fa fa-check"></i><b>3</b> What’s in a Pangenome</a></li>
+<li class="chapter" data-level="4" data-path="hs.html"><a href="hs.html"><i class="fa fa-check"></i><b>4</b> It’s Pangenomes All the Way Down</a></li>
+<li class="chapter" data-level="5" data-path="bp.html"><a href="bp.html"><i class="fa fa-check"></i><b>5</b> The Sum of it All</a><ul>
+<li class="chapter" data-level="5.1" data-path="bp.html"><a href="bp.html#an-overview-of-the-bacterial-pangenome"><i class="fa fa-check"></i><b>5.1</b> An Overview of the Bacterial Pangenome</a></li>
+<li class="chapter" data-level="5.2" data-path="bp.html"><a href="bp.html#looking-at-the-panchromosome"><i class="fa fa-check"></i><b>5.2</b> Looking at the Panchromosome</a></li>
+<li class="chapter" data-level="5.3" data-path="bp.html"><a href="bp.html#a-very-large-set-family"><i class="fa fa-check"></i><b>5.3</b> A Very Large Set Family</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="bp.html"><a href="bp.html#the-link-to-taxonomy"><i class="fa fa-check"></i><b>5.3.1</b> The Link to Taxonomy</a></li>
+<li class="chapter" data-level="5.3.2" data-path="bp.html"><a href="bp.html#data-quality-and-lack-thereof"><i class="fa fa-check"></i><b>5.3.2</b> Data Quality and Lack Thereof</a></li>
+<li class="chapter" data-level="5.3.3" data-path="bp.html"><a href="bp.html#the-curious-case-of-escherichia-and-shigella"><i class="fa fa-check"></i><b>5.3.3</b> The Curious Case of Escherichia and Shigella</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="discussion.html"><a href="discussion.html"><i class="fa fa-check"></i><b>6</b> Taking a Step Back</a><ul>
+<li class="chapter" data-level="6.1" data-path="discussion.html"><a href="discussion.html#the-why-of-it-all"><i class="fa fa-check"></i><b>6.1</b> The “Why” of it All</a><ul>
+<li class="chapter" data-level="6.1.1" data-path="discussion.html"><a href="discussion.html#why-you-would-want-a-large-pangenome"><i class="fa fa-check"></i><b>6.1.1</b> Why You Would Want a Large Pangenome</a></li>
+<li class="chapter" data-level="6.1.2" data-path="discussion.html"><a href="discussion.html#why-you-would-want-a-top-taxon-pangenome"><i class="fa fa-check"></i><b>6.1.2</b> Why You Would Want a Top-Taxon Pangenome</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="discussion.html"><a href="discussion.html#the-future-of-large-scale-pangenome-analysis"><i class="fa fa-check"></i><b>6.2</b> The Future of Large-Scale Pangenome Analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="conclusion.html"><a href="conclusion.html"><i class="fa fa-check"></i><b>7</b> This is the End</a></li>
+<li class="chapter" data-level="8" data-path="supplementary-figures.html"><a href="supplementary-figures.html"><i class="fa fa-check"></i><b>8</b> Supplementary Figures</a><ul>
+<li class="chapter" data-level="8.1" data-path="supplementary-figures.html"><a href="supplementary-figures.html#FMFsupfig"><i class="fa fa-check"></i><b>8.1</b> FindMyFriends: A Framework for Fast and Accurate Pangenome Analysis of Thousands of Diverse Genomes</a></li>
+<li class="chapter" data-level="8.2" data-path="supplementary-figures.html"><a href="supplementary-figures.html#PVsupfig"><i class="fa fa-check"></i><b>8.2</b> PanViz: Interactive Visualization of the Structure of Functionally Annotated Pangenomes</a></li>
+<li class="chapter" data-level="8.3" data-path="supplementary-figures.html"><a href="supplementary-figures.html#HSsupfig"><i class="fa fa-check"></i><b>8.3</b> Hierarchical Sets: Analyzing Pangenome Structure through Scalable Set Visualizations</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="supdata.html"><a href="supdata.html"><i class="fa fa-check"></i><b>9</b> Supplementary Data</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Pangenome Tools for Rapid, Large-Scale Analysis of Bacterial Genomes</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="bp" class="section level1">
+<h1><span class="header-section-number">5</span> The Sum of it All</h1>
+<blockquote>
+<p>“The whole is greater than the sum of its parts.”</p>
+<p>— Aristotle</p>
+</blockquote>
+<p><span class="newthought">The tools presented in the three preceding chapters</span> are just that; tools. In order to show a little bit more what types of novel analyses and insight can be gained from the use of these tools, this chapter will dig a little deeper into the domain-level pangenome created in chapter 1 encompassing 4,770 genomes from the total bacterial domain. This chapter will focus on the use of <span class="abr">FindMyFriends</span> and <span class="abr">Hierarchical Set</span> analysis as <span class="abr">PanViz</span> is currently intended for medium-sized pangenomes with functional annotation. It is possible though, that some of the leads and interesting subsets revealed in this chapter could be further investigated using <span class="abr">PanViz</span>.</p>
+<div id="an-overview-of-the-bacterial-pangenome" class="section level2">
+<h2><span class="header-section-number">5.1</span> An Overview of the Bacterial Pangenome</h2>
+<p>The genomes present in the generated pangenome are not a phylogenetically balanced subset of all bacteria. Rather, they reflect the interest of the scientific world as this is how genomes are chosen for sequencing. Figure <a href="bp.html#fig:treemap">5.1</a> shows the lack of balance by drawing a treemap of the bacterial evolutionary tree weighted by the number of genomes from each taxon represented in the pangenome. <em>Proteobacteria</em> take up about half of the pangenome, followed by <em>Firmicutes</em> and <em>Actinobacteria</em>. Thirty‑one different phyla are collected in the <em>other</em> category that takes up about 8% of the genomes in the pangenome. As expected, the highest represented classifications reflect the impact of the bacteria on human society. Nine of the ten most prevalent classifications represents bacteria responsible for important human diseases. The last, <em>Xanthomonas citri subsp. citri</em>, is a plant pathogen responsible for citrus canker and of major economic impact<span class="citation"><sup><a href="#ref-Jalan:2013cl">124</a></sup></span>. The lack of balance in the pangenome is not necessarily a problem but should be kept in mind, e.g. when evaluating the ubiquity of gene groups based on number of genomes it represents. A high number of represented genomes only equals a broadly prevalent gene if the genomes are evenly distributed throughout the phylogeny.</p>
+<div class="figure" style="text-align: center"><span id="fig:treemap"></span>
+<img src="figures/treemap.svg" alt="An overview of the phylogeny represented by the bacterial pangenome created in chapter&nbsp;\@ref(fmf), shown as a treemap. Each rectangle is scaled by the number of genomes in the pangenome belong to the taxon it represents. The eight largest phyla are color coded and the ten most prevalent classifications are labeled." width="90%" />
+<p class="caption">
+Figure 5.1: An overview of the phylogeny represented by the bacterial pangenome created in chapter <a href="fmf.html#fmf">2</a>, shown as a treemap. Each rectangle is scaled by the number of genomes in the pangenome belong to the taxon it represents. The eight largest phyla are color coded and the ten most prevalent classifications are labeled.
+</p>
+</div>
+<p>To gain a broad overview of the structure of each phyla, the pangenome can be subsetted to only contain the genomes belonging to a specific phylum. Figure <a href="bp.html#fig:phylaoverview">5.2</a> shows the number of accessory and singleton gene groups for each phyla in raw and normalized values (there is no core present in any phyla). As expected the number of gene groups is related to the number of genomes in each phyla, though <em>Tenericutes</em> and <em>Chlamydiae</em> seems to exhibit much smaller pangenome size than what would be expected by the number of genomes representing them. It should be kept in mind that genomes in these two phyla are generally smaller with a mean size around 1000 genes, so the capacity to contain a higher number of gene groups is limited. There is a surprising agreement between the different phyla in terms of the ratio of accessory gene groups to singleton gene groups, with singletons taking up roughly 70–80% of the gene groups. <em>Bacteroidetes</em> and <em>Cyanobacteria</em> are outliers in this regard with only ~10% accessory gene groups. <em>Bacteroidetes</em> are a major part of the ecology of mammalian colons and results have indicated a high propensity for adaption through horizontal gene transfer<span class="citation"><sup><a href="#ref-Shoemaker:2001fq">125</a></sup></span>. <em>Cyanobacteria</em> is one of the oldest bacterial phyla, inhabiting a large range of different habitats and showing large morphological diversity<span class="citation"><sup><a href="#ref-Schirrmeister:2010it">126</a></sup></span>. Thus, the lower ratio of accessory genes for these two phyla is expected.</p>
+<div class="figure" style="text-align: center"><span id="fig:phylaoverview"></span>
+<img src="figures/phyla_overview.svg" alt="An overview of the distribution of gene groups within each of the labeled phyla in figure&nbsp;\@ref(fig:treemap). Phyla are sorted by the number of genomes in the pangenome they represent. The top plot shows the raw number of gene groups while the button is normalized to the size of the pangenome." width="90%" />
+<p class="caption">
+Figure 5.2: An overview of the distribution of gene groups within each of the labeled phyla in figure <a href="bp.html#fig:treemap">5.1</a>. Phyla are sorted by the number of genomes in the pangenome they represent. The top plot shows the raw number of gene groups while the button is normalized to the size of the pangenome.
+</p>
+</div>
+<p>Switching the focus from the genomes to the gene groups, it is seen that, as expected, most gene groups only contain members from a single phylum, but a small selection (9,778) spans multiple phyla, up to maximum of three. The majority of these represents gene groups shared between <em>Actinobacteria</em> and <em>Proteobacteria</em>, but 1,730 of these are related to a single <em>Actinobacterium</em> being consistently present in otherwise <em>Proteobacteria</em>-dominated gene groups. Such a discrepancy strongly suggests a misclassification or a mis-annotated genome, underlining the caution needed when using predefined genome classifications as a guide for data analysis. In the following, the structure of the data itself rather than predefined hypotheses will, to a higher degree, be guiding the analysis.</p>
+</div>
+<div id="looking-at-the-panchromosome" class="section level2">
+<h2><span class="header-section-number">5.2</span> Looking at the Panchromosome</h2>
+<p><span class="abr">FindMyFriends</span> allows formatting the pangenome as a graph of gene groups with edges between gene groups that lie adjacent to each other in one or more genomes. This data structure, called a <em>panchromosome</em>, is able to capture the full chromosomal position information in the pangenome in a sparse graph structure and facilitate using common graph algorithms to investigate this structure. Figure <a href="bp.html#fig:panchromexpl">5.3</a> shows how the genomes from figure <a href="intro.html#fig:panexpl">1.2</a> on page  will be converted to a panchromosomal graph.</p>
+<div class="figure" style="text-align: center"><span id="fig:panchromexpl"></span>
+<img src="figures/panchrom_expl.svg" alt="An illustration of the panchromosome graph structure equivalent to the pangenome matrix exemplified in figure&nbsp;\@ref(fig:panexpl). Each gene group makes up a vertex in the graph and vertexes are connected if their member genes lies adjacent to each other on one or more chromosomes. The start gene group is replicated in the network diagram to simplify the line drawing." width="90%" />
+<p class="caption">
+Figure 5.3: An illustration of the panchromosome graph structure equivalent to the pangenome matrix exemplified in figure <a href="intro.html#fig:panexpl">1.2</a>. Each gene group makes up a vertex in the graph and vertexes are connected if their member genes lies adjacent to each other on one or more chromosomes. The start gene group is replicated in the network diagram to simplify the line drawing.
+</p>
+</div>
+<p>The panchromosome of the bacterial pangenome contains 6,887,134 vertices (gene groups) and 7,456,591 edges. The panchromosome contains 1,281 unconnected components with the bulk of the gene groups (79%) collected in the largest component. 1,050 components, representing 6% of the gene groups, only contain singleton gene groups, meaning they only represent a single genome each. Most of the 629 genomes represented in the 1,050 singleton components were also present in some of the larger clusters, indicating that these singleton components represents either plasmids or unique chromosomes of a multi-chromosome organism. 145 genomes are only represented by one or more singleton components indicating no overlap with any other sequence in the dataset. Some of these genomes are obvious sequencing or annotation errors with very low number of genes, while 36 of them are as yet uncultivated (classified as <em>Candidatus</em>), which could explain their low similarity to the rest of the genomes. The largest component in the panchromosome spans all phyla while the others are phylum-specific. In the following, I will focus on a pangenome subset based on the 3,781 genomes represented in the larger component, not because the rest does not contain interesting information, but as a crude, albeit effective, way of filtering out the most erroneous genomes. Interestingly, this removes all but six of the 132 <em>Tenericutes</em>. This phylum is characterized by the smallest genomes of all bacteria as well as their lack of cell-wall. There has been controversy over whether the organisms classified under <em>Tenericutes</em> should constitute their own phylum or be classified under <em>Firmicutes</em><span class="citation"><sup><a href="#ref-Wolf:2004jt">127</a></sup></span>. The present pangenome strongly support the uniqueness of the <em>Tenericutes</em> at the phylum level, though it cannot rule out the possibility of strong chromosomal degradation following a split from the rest of <em>Firmicutes</em>.</p>
+<p>The new pangenome contains 5,498,270 (80%) gene groups from 3,781 (79%) genomes and the derived panchromosome now contains 758 independent components with the largest unchanged from the prior panchromosome. While it is tempting at this point to show a network plot of the complexity of the graph, such visualizations seldom have any utility beside making impressive-looking front pages. In order to efficiently visualize the panchromosome structure it is necessary to focus on specific parts of it or formulate specific question to query it for. An example of the latter are the <code>variableRegions()</code> function in <span class="abr">FindMyFriends</span> that detects small non-linear areas of the graph that usually are the result of frameshifts, deletions/insertions, annotation errors, etc. Here, I will focus on the former though, by utilizing the <span class="abr">Hierarchical Sets</span> analysis presented in chapter 3.</p>
+</div>
+<div id="a-very-large-set-family" class="section level2">
+<h2><span class="header-section-number">5.3</span> A Very Large Set Family</h2>
+<p>Looking at 3,781 sets is quite a challenge. The number of possible combination of sets is <span class="math inline">\(2^{3781} - 1\)</span> which exceeds the highest possible number (<span class="math inline">\(1.798\times10^{308}\)</span>) in most scientific software<span class="citation"><sup><a href="#ref-IEEEComputerSociety:2008gr">128</a></sup></span>. <span class="abr">Hierarchical Sets</span> solves this by only looking at the most similar sets, while at the same time providing the largest groupings containing a core. A <span class="abr">Hierarchical Set</span> analysis yields 225 independent clusters (see appendix <a href="supdata.html#supdata">9</a> for access to the results). As can be seen in figure <a href="bp.html#fig:intersection">5.4</a>, the number of genomes and gene groups as well as the heterogeneity in the different sub-pangenomes based on the clustering vary widely. 130 of the clusters contain less than six genomes, while the largest contain 418.</p>
+<div class="figure" style="text-align: center"><span id="fig:intersection"></span>
+<img src="figures/intersections.svg" alt="Intersection and union sizes of the set families defined by the branch points of a <span class='abr'>Hierarchical Set</span> clustering. The number of genomes represented in each intersection is color coded and the phylum of each genome is annotated between the two plots. See chapter <a href="hs.html#hs">4</a> for further discussion of this plot type.&quot; width=“90%” /&gt;
+<p class="caption">
+Figure 5.4: Intersection and union sizes of the set families defined by the branch points of a <span class="abr">Hierarchical Set</span> clustering. The number of genomes represented in each intersection is color coded and the phylum of each genome is annotated between the two plots. See chapter <a href="hs.html#hs">4</a> for further discussion of this plot type.
+</p>
+</div>
+<div id="the-link-to-taxonomy" class="section level3">
+<h3><span class="header-section-number">5.3.1</span> The Link to Taxonomy</h3>
+<p>Each cluster is clearly dominated by a single phylum but 41 of them contains multiple phyla up to a maximum of three. The clear dominance of one phylum in the clusters that contain multiple phyla strongly suggest misclassification or annotation error for the odd phyla genomes. In total, 43 genomes are clustered within clusters dominated by a phylum different from their own and these are good candidates for a reexamination. There is no clear pattern in the phylogeny of the 43 genomes as they span 42 different species and 36 different genera so it is likely that they constitute annotation error rather than classification error of the organism they represent. The <em>Actinobacterium</em> genome that consistently was member of the same gene groups as a large subset of <em>Proteobacteria</em> genomes (see section <a href="bp.html#an-overview-of-the-bacterial-pangenome">5.1</a>) is naturally also present among the 43 potential.</p>
+<p>Zooming in on the clusters dominated by <em>Actinobacteria</em> it is possible to gain a better overview of how core size relate to taxon classification. As can be seen from figure <a href="bp.html#fig:actintersect">5.5</a>, the large clusters with high core sizes are generally correlated with the members coming from the same species or closely related species. Species clusters tend to have a core above 1000 gene groups, while genus clusters have a small (up to 30 gene groups), but still present, core. For order level clusters, the core has vanished completely except when the order is only represented by a single genus in which case it reflects the genus core e.g. in the case of <em>Propionibacteriales</em> and <em>Propionibacterium</em> (the cluster figure <a href="bp.html#fig:actintersect">5.5</a><span class="abr">A</span> belongs to). These findings are in contrast with earlier top-level pangenome studies. <span class="citation"><a href="#ref-Lapierre:2009dt">5</a></span>, <span class="citation"><a href="#ref-Collingro:2011ke">6</a></span>, and <span class="citation"><a href="#ref-Collins:2012jx">7</a></span> all found a preserved core at domain, phylum, and order level respectively. Several factors explains this difference: the current pangenome contains eight times the number of genomes of the previously reported bacterial pangenome and the clustering approach results in orthologous groups in contrast to the homologous clustering employed in previous studies. Mostly, there is a one-to-one relationship between genera and independent clusters. While figure <a href="bp.html#fig:actintersect">5.5</a> tend to support the established phylogeny, the largest rightmost cluster shed some doubts as to the classification of certain <em>Mycobacterium</em> species. <em>Mycobacterium tuberculosis</em> is split up in two groups by <em>Mycobacterium bovis</em>, <em>Mycobacterium canettii</em>, and <em>Mycobacterium africanum</em>. All of these strains are part of the <em>Mycobacterium tuberculosis</em> complex whose evolutionary history has been subject to many different interpretations, and a split of <em>M. tuberculosis</em> into two distinct groups has already been suggested<span class="citation"><sup><a href="#ref-Brosch:2002dr">129</a></sup></span>. Furthermore <em>M. africanum</em> and <em>M. canettii</em> seems to be similar to <em>M. bovis</em> and <em>M. tuberculosis</em> respectively, seen from a core gene perspective at least, which also supports earlier findings<span class="citation"><sup><a href="#ref-Winglee:2016ju">130</a>,<a href="#ref-Periwal:2014dj">131</a></sup></span>.</p>
+<div class="figure" style="text-align: center"><span id="fig:actintersect"></span>
+<img src="figures/act_intersection.svg" alt="The intersection stack reperesenting the *Actinobacteria* dominated clusters. The following strong features, representing specific species are annotated: **A:** *Propionibacterium acnes* **B:** *Bifidobacterium animalis* **C:** *Bifidobacterium longum* **D:** *Bifidobacterium breve* **E:** *Corynebacterium pseudotuberculosis* **F:** *Corynebacterium ulcerans* **G:** **Corynebacterium diphtheriae** **H:** *Mycobacterium abscessus* **I:** *Mycobacterium tuberculosis* **J:** **Mycobacterium bovis**." width="90%" />
+<p class="caption">
+Figure 5.5: The intersection stack reperesenting the <em>Actinobacteria</em> dominated clusters. The following strong features, representing specific species are annotated: <strong>A:</strong> <em>Propionibacterium acnes</em> <strong>B:</strong> <em>Bifidobacterium animalis</em> <strong>C:</strong> <em>Bifidobacterium longum</em> <strong>D:</strong> <em>Bifidobacterium breve</em> <strong>E:</strong> <em>Corynebacterium pseudotuberculosis</em> <strong>F:</strong> <em>Corynebacterium ulcerans</em> <strong>G:</strong> <strong>Corynebacterium diphtheriae</strong> <strong>H:</strong> <em>Mycobacterium abscessus</em> <strong>I:</strong> <em>Mycobacterium tuberculosis</em> <strong>J:</strong> <strong>Mycobacterium bovis</strong>.
+</p>
+</div>
+<p>Looking at the non-<em>Actinobacteria</em>-genomes in the <em>Actinobacteria</em>-dominated clusters, it can be seen that they do not simply indicate classification errors. All genomes classified under a different phyla shows very little overlap with the genomes they are clustered together with. Still, these genomes does not constitute the most divergent genomes within the clustering as many <em>Actinobacteria</em> genomes have similar small overlaps with the rest of their cluster.</p>
+</div>
+<div id="data-quality-and-lack-thereof" class="section level3">
+<h3><span class="header-section-number">5.3.2</span> Data Quality and Lack Thereof</h3>
+<p>In order to investigate how these “misclassified” genomes relate to genomes outside of their clusters, the outlying elements are inspected. Figure <a href="bp.html#fig:phyloout">5.6</a> shows the outlying elements between genomes from clusters that differ in their most dominant phylum. Many, but not all, of the strongest currents are related to “misclassified” genomes and not all “misclassified” genomes result in a high number of outlying elements. There is a clear tendency towards the “misclassified” genomes being responsible for the strongest deviations as measured by the number of outlying elements between genome pairs. The strongest deviation not involving a “misclassified” genome involves 17 outlying elements while the strongest involving a “misclassified” genome involves 3,879.</p>
+<div class="figure" style="text-align: center"><span id="fig:phyloout"></span>
+<img src="figures/phyloOut.svg" alt="Hierarchical edge bundles showing the outlying elements present between genomes in clusters of different dominant phylum. The dominant phylum of each cluster is encoded in the arc color and the positions of genomes deviating from the dominant phylum are encoded as colored triangles outside the arcs." width="90%" />
+<p class="caption">
+Figure 5.6: Hierarchical edge bundles showing the outlying elements present between genomes in clusters of different dominant phylum. The dominant phylum of each cluster is encoded in the arc color and the positions of genomes deviating from the dominant phylum are encoded as colored triangles outside the arcs.
+</p>
+</div>
+<p>The strongest deviating genome, a <em>Firmicute</em> (<em>Bacillus subtilis</em>) clustered within a <em>Cyanobacteria</em>-dominated cluster, will be investigated further in the following. As can be seen in figure <a href="bp.html#fig:cyanintersect">5.7</a>, this genome shows quite strong similarity with the genomes among which it is clustered, in terms of shared core. This is expected as a very high intersection size would be needed to overcome the strong link it shows to other <em>Firmicutes</em>. Still, it stands out among the other <em>Synechocystis sp. PCC 6803</em> it is clustered with, by containing more than twice the number of genes.</p>
+<div class="figure" style="text-align: center"><span id="fig:cyanintersect"></span>
+<img src="figures/cyan_intersection.svg" alt="The intersection stack of one of the *Cyanobacteria* dominated clusters containing a strongly outlying *Firmicute* (*Bacillus subtilis*)." width="90%" />
+<p class="caption">
+Figure 5.7: The intersection stack of one of the <em>Cyanobacteria</em> dominated clusters containing a strongly outlying <em>Firmicute</em> (<em>Bacillus subtilis</em>).
+</p>
+</div>
+<p>Looking at how it relates to the other <em>Firmicutes</em> in the pangenome it can be seen that it shares a large amount of genes with genomes in one of the larger clusters (dominated by other <em>B. subtilis</em>). Again, the odd <em>B. subtilis</em> does not match in size (the other <em>B. subtilis</em> contain ~4000 genes). In fact, the size of the odd <em>B. subtilis</em> is almost exactly the sum of its intersection size with other <em>B. subtilis</em> and other <em>S. sp. PCC 6803</em>. While this could indicate a strong contamination of the sample prior to sequencing, the strain is in fact the first example of a chimera genome, constructed by cloning a full <em>S. sp. PCC 6803</em> genome into a <em>B. subtilis</em><span class="citation"><sup><a href="#ref-Watanabe:2012el">132</a></sup></span>. The fact that such strong genome engineering does not upset the neighborhood based clustering in <span class="abr">FindMyFriends</span> is testament to its applicability. The classification of the genome as a <em>B. subtilis</em> can be questioned though, but currently there is no formal approach to classifying chimera genomes.</p>
+<div class="figure" style="text-align: center"><span id="fig:firmintersect"></span>
+<img src="figures/firm_intersection.svg" alt="The intersection stack of the *Firmicutes* dominated clusters along with each genomes intersection with the deviating *Bacillus subtilis* from figure&nbsp;\@ref(fig:cyanintersect)." width="90%" />
+<p class="caption">
+Figure 5.8: The intersection stack of the <em>Firmicutes</em> dominated clusters along with each genomes intersection with the deviating <em>Bacillus subtilis</em> from figure <a href="bp.html#fig:cyanintersect">5.7</a>.
+</p>
+</div>
+</div>
+<div id="the-curious-case-of-escherichia-and-shigella" class="section level3">
+<h3><span class="header-section-number">5.3.3</span> The Curious Case of Escherichia and Shigella</h3>
+<p>It is possible to get an overview of the plasticity of the genomes within each cluster by looking broadly on the outlying elements instead of focusing on between-phyla deviations. As the number of possible outlying elements between two sets is governed by the size of the sets, it can be beneficial to look at the ratio of deviation rather than the raw number of outlying elements in order to not favor large genomes. As seen in figure <a href="bp.html#fig:ratioout">5.9</a> some clusters have a general tendency towards high internal deviation (<span class="abr">A</span> and <span class="abr">B</span> in figure <a href="bp.html#fig:ratioout">5.9</a>), while the deviations in other clusters are driven by a single or a few genomes (figure <a href="bp.html#fig:ratioout">5.9</a><span class="abr">C</span>). A single genome is responsible for a very strong deviation across two different independent clusters. This genome, an <em>Escherichia coli</em> grouped together with the <em>Pasteurellales</em> order shares many gene groups with the other <em>E. coli</em> grouped in another cluster. Looking a bit closer reveals that the single misplaced <em>E. coli</em> only contains 134 genes. A single gene group is incidentally shared with all <em>Pasteurellales</em> while none of the 134 genes belonged to the core of the other <em>E. coli</em>, explaining the odd placement in the clustering. Looking into the submission details of the genome sequence reveals a standard <em>E. coli</em>-sized genome so it is likely that the low number of genes is an error of the genome acquisition prior to the pangenome creation.</p>
+<div class="figure" style="text-align: center"><span id="fig:ratioout"></span>
+<img src="figures/ratioOut.svg" alt="The 5% strongest deviations as measured by the ratio of the number of outlying elements to the number of genes in the shortest genome. **A:** The two most prominent deviation are both located in the same *Proteobacteria* cluster. **B:** The next three deviations are all located among *Firmicutes*. **C:** Strong deviations related to a single genome. **D:** The only deviation spanning two clusters." width="90%" />
+<p class="caption">
+Figure 5.9: The 5% strongest deviations as measured by the ratio of the number of outlying elements to the number of genes in the shortest genome. <strong>A:</strong> The two most prominent deviation are both located in the same <em>Proteobacteria</em> cluster. <strong>B:</strong> The next three deviations are all located among <em>Firmicutes</em>. <strong>C:</strong> Strong deviations related to a single genome. <strong>D:</strong> The only deviation spanning two clusters.
+</p>
+</div>
+<p>A cluster encompassed by a large subset of <em>Enterobacteriales</em> (<em>Enterobacteriales</em> is split into two independent clusters) serves as a last example. This cluster contains both <em>Escherichia</em> and <em>Salmonella</em> and is responsible for the largest number of outlying elements (figure <a href="bp.html#fig:ratioout">5.9</a><span class="abr">A</span>). An overview of the structure and composition of this cluster can be seen in figure <a href="bp.html#fig:entero">5.10</a>. The cluster seems divided into 3 groups, each dominated by either <em>Klebsiella</em>, <em>Escherichia</em>, or <em>Salmonella</em>. The genus <em>Salmonella</em> as well as <em>Escherichia/Shigella</em> shows very strong internal deviation. <em>Shigella</em> has been proposed to belong to the <em>Escherichia</em> genus<span class="citation"><sup><a href="#ref-Lukjancenko:2010gd">18</a>,<a href="#ref-Pupo:2000by">133</a>–<a href="#ref-Sims:2011hx">135</a></sup></span> but this notion is not supported by the <span class="abr">Hierarchical Set</span> analysis. While they are indeed close relatives, <em>Shigella</em> and <em>Escherichia</em> have distinct cores, and <em>Shigella</em> even shares a larger core with the genus <em>Citrobacter</em>. The placement of the <em>Citrobacter</em> genus has been subject to different views, some placing it in closer proximity to <em>Salmonella</em>, while others place it close to <em>Escherichia</em><span class="citation"><sup><a href="#ref-Delgado:2012ch">136</a>,<a href="#ref-Petty:2009fq">137</a></sup></span>. The close link to the <em>Shigella</em> genus suggested here has not been reported before. Despite the large shared core between <em>Citrobacter</em> and <em>Shigella</em>, <em>Shigella</em> seem to share a strong link to <em>Escherichia</em> based on the number of outlying elements shared between the two genera; a link not present between <em>Citrobacter</em> and <em>Escherichia</em>. It would seems that while they constitute distinct lineages, <em>Escherichia</em> and <em>Shigella</em> have access to the same gene pool.</p>
+<div class="figure" style="text-align: center"><span id="fig:entero"></span>
+<img src="figures/entero_out.svg" alt="An overview of the structure of the largest cluster in the pangenome, covering a large subset of *Enterobacteriales*. The upper plot shows the 20% strongest deviations by count of outlying elements, with the genus of each genome annotated by the color of the outside arc. The lower plot shows the intersection stack along with genus annotation." width="90%" />
+<p class="caption">
+Figure 5.10: An overview of the structure of the largest cluster in the pangenome, covering a large subset of <em>Enterobacteriales</em>. The upper plot shows the 20% strongest deviations by count of outlying elements, with the genus of each genome annotated by the color of the outside arc. The lower plot shows the intersection stack along with genus annotation.
+</p>
+</div>
+<p>The gene groups making up the outlying elements between <em>Shigella</em> and <em>Escherichia</em> show a bimodal distribution when it comes to the number of times each gene group is part of a deviation (figure <a href="bp.html#fig:shigeschelem">5.11</a>). The large group of elements that are part of more than 900 deviations are likely the result of deletion events within different branches happening after <em>Escherichia</em> and <em>Shigella</em> delineated rather than horizontal gene transfer events. The chance that so many separate mobile elements should be this ubiquitous without being complete pervasive is minimal, though existent, compared to the chance of uncoordinated deletion event happening throughout the two genera.</p>
+<div class="figure" style="text-align: center"><span id="fig:shigeschelem"></span>
+<img src="figures/shig_esch_elem_dist.svg" alt="A histogram showing the distribution of deviation strengths, as measured by number of times an element is considered outlying, between *Shigella* and *Escherichia* genomes." width="90%" />
+<p class="caption">
+Figure 5.11: A histogram showing the distribution of deviation strengths, as measured by number of times an element is considered outlying, between <em>Shigella</em> and <em>Escherichia</em> genomes.
+</p>
+</div>
+<p>From the panchromosome, it is possible to gain more information about these outlying gene groups. By extracting a subgraph only containing the vertices that represent outlying elements between <em>Shigella</em> and <em>Escherichia</em> only the relational structure between the outlying gene groups is retained. This graph is still of a substantial size but can be visualized using a hive plot<span class="citation"><sup><a href="#ref-Krzywinski:2012jj">138</a></sup></span>, thus ensuring that the layout reflects the information in the graph. Figure <a href="bp.html#fig:hive">5.12</a> shows a hive plot representation of the subgraph, segmenting the gene groups by the number of times they are outlying, as well as the number of connections they have to other outlying gene groups. <em>Single</em> denotes gene groups with no connections to other outlying gene groups, <em>end</em> denotes gene groups with only one connection, <em>segment</em> denotes gene groups with two connections, and <em>hub</em> denotes gene groups with more than two connections. Several structurally interesting things are visible in this representation. There is a small but present subset of gene groups that are unconnected to any of the other outlying gene groups. These isolated gene groups are distributed between all three outlier bins, but proportionally overrepresented in the two extreme bins. These isolated gene groups are likely single gene insertions/deletions from gene cassettes or gene deletion due to frameshift events. It is probable that the isolated outlying gene groups appearing few times are predominantly insertions while those appearing often are due to deletions.</p>
+<div class="figure" style="text-align: center"><span id="fig:hive"></span>
+<img src="figures/out_hive.svg" alt="A hive plot showing the subset of the panchromosome containing only the gene groups corresponding to the outlying elements between *Shigella* and *Escherichia*. The axes divide the gene groups by the number of times it is considered outlying (see figure&nbsp;\@ref(fig:shigeschelem)) and each axis is itself divided by the degree of the vertex representing the gene group. *Single* denotes isolated vertices, i.e. degree = 0, *End* denotes vertices with degree = 1, *Segment* denotes vertices with degree = 2 and *Hub* denotes vertices with degree > 2. Edges, denoting chromosomal adjacency, are colored according to the number of genomes where the two gene groups are adjacent.&quot; width=“90%” /&gt;
+<p class="caption">
+Figure 5.12: A hive plot showing the subset of the panchromosome containing only the gene groups corresponding to the outlying elements between <em>Shigella</em> and <em>Escherichia</em>. The axes divide the gene groups by the number of times it is considered outlying (see figure <a href="bp.html#fig:shigeschelem">5.11</a>) and each axis is itself divided by the degree of the vertex representing the gene group. <em>Single</em> denotes isolated vertices, i.e. degree = 0, <em>End</em> denotes vertices with degree = 1, <em>Segment</em> denotes vertices with degree = 2 and <em>Hub</em> denotes vertices with degree &gt; 2. Edges, denoting chromosomal adjacency, are colored according to the number of genomes where the two gene groups are adjacent.
+</p>
+</div>
+<p>Another apparent feature is that gene groups that are part of seldom occurring deviations are mostly connected to gene groups from the other two bins if these gene groups are hubs. There is a high likelihood that segment- and end-vertices constitute longer mobile elements and the fact that mobile elements of different prevalence are not directly attached to each other seems natural. Endpoint vertices show a surprising level of connectivity across bins, as it would be expected that they would be closely tied to the segment vertices of their own bin. It could be hypothesized that hub vertices are gene groups lying in close proximity to a recombination site, explaining the proximity to multiple other gene groups. In that case, the end vertices from the “&lt;5” bin that connects to hub vertices from other bins are simply gene cassettes that have integrated themselves into genomes close to other mobile elements. There is a strong connection between segment elements in the “5–945” and “95&lt;” bins and if present, the connection is almost ubiquitous (lack of edges representing few genomes). This could point towards mobile elements that almost always travel in concert, or possibly a gradual segment-wise degradation of a chromosomal area, e.g. a duplicated gene cluster still undergoing mutational changes. Biosynthetic gene clusters, which often propagate through horizontal gene as well as undergo rapid duplication and mutation<span class="citation"><sup><a href="#ref-Ziemert:2014gi">139</a>,<a href="#ref-Fischbach:2008fp">140</a></sup></span> are likely candidates for such a scenario. There is also a strong connection between hub vertices in the “945&lt;” bin and the segment vertices in the “5–945” bin, covering the full range of edge strengths. This could suggest that the gene groups represented by these hub vertices are the endpoints of mobile elements that are subject to considerable rearrangement, within the <em>Shigella</em> and <em>Escherichia</em> genomes. Most of the suggestions made above are speculative, but it is apparent based on the structure of the graph, that there is a clear structure to the gene groups that make up the strong deviations within the <em>Shigella</em> and <em>Escherichia</em> lineage. There is a very small percentage that are the result of insertion or deletion of isolated gene groups as the majority are made up of longer chromosomal segments spanning multiple gene groups. While it is possible that some of the segments present in the “945&lt;” bin are simply the result of multiple deletions, everything points towards <em>Shigella</em> and <em>Escherichia</em> having access to a huge shared pool of mobile elements consisting of multiple genes. The graph consists of 304 separate components with the large majority of gene groups (4,064) gathered in a single component. Of the remaining, there are 40 components containing more than 10 gene groups and while it is specious to consider these possible plasmids, they are all part of the main <em>Shigella/Escherichia</em> panchromosome. This leaves transposons and prophages as very likely candidates for the majority of the outlying elements existing between <em>Shigella</em> and <em>Escherichia</em>.</p>
+<p>This concludes the discourse into the bacterial pangenome, though the data obviously holds much more information than covered here. What can be daunting when venturing into such huge datasets is that there is no single story to tell, and no final concluding remark. While it is often thought that knowledge will reveal itself if just enough data is collected, the opposite often holds true, and strong hypotheses and background knowledge are essential in navigating huge biological datasets such as the bacterial pangenome. Enter at your own peril.</p>
+
+</div>
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-Jalan:2013cl">
+<p>124. Jalan, N. <em>et al.</em> Complete Genome Sequence of Xanthomonas citri subsp. citri Strain Aw12879, a Restricted-Host-Range Citrus Canker-Causing Bacterium. <em>Genome announcements</em> <strong>1,</strong> (2013).</p>
+</div>
+<div id="ref-Shoemaker:2001fq">
+<p>125. Shoemaker, N. B., Vlamakis, H., Hayes, K. &amp; Salyers, A. A. Evidence for extensive resistance gene transfer among Bacteroides spp. and among Bacteroides and other genera in the human colon. <em>Applied and Environmental Microbiology</em> <strong>67,</strong> 561–568 (2001).</p>
+</div>
+<div id="ref-Schirrmeister:2010it">
+<p>126. Schirrmeister, B. E., Antonelli, A. &amp; Bagheri, H. C. The origin of multicellularity in cyanobacteria. <em>BMC Evolutionary Biology</em> <strong>11,</strong> 45–45 (2010).</p>
+</div>
+<div id="ref-Wolf:2004jt">
+<p>127. Wolf, M., Müller, T., Dandekar, T. &amp; Pollack, J. D. Phylogeny of Firmicutes with special reference to Mycoplasma (Mollicutes) as inferred from phosphoglycerate kinase amino acid sequence data. <em>International journal of systematic and evolutionary microbiology</em> <strong>54,</strong> 871–875 (2004).</p>
+</div>
+<div id="ref-IEEEComputerSociety:2008gr">
+<p>128. IEEE Computer Society. IEEE Standard for Floating-Point Arithmetic. (2008).</p>
+</div>
+<div id="ref-Lapierre:2009dt">
+<p>5. Lapierre, P. &amp; Gogarten, J. P. Estimating the size of the bacterial pan-genome. <em>Trends in Genetics</em> <strong>25,</strong> 107–110 (2009).</p>
+</div>
+<div id="ref-Collingro:2011ke">
+<p>6. Collingro, A. <em>et al.</em> Unity in variety–the pan-genome of the Chlamydiae. <em>Molecular Biology and Evolution</em> <strong>28,</strong> 3253–3270 (2011).</p>
+</div>
+<div id="ref-Collins:2012jx">
+<p>7. Collins, R. E. &amp; Higgs, P. G. Testing the infinitely many genes model for the evolution of the bacterial core genome and pangenome. <em>Molecular Biology and Evolution</em> <strong>29,</strong> 3413–3425 (2012).</p>
+</div>
+<div id="ref-Brosch:2002dr">
+<p>129. Brosch, R. <em>et al.</em> A new evolutionary scenario for the Mycobacterium tuberculosis complex. <em>Proceedings of the National Academy of Sciences of the United States of America</em> <strong>99,</strong> 3684–3689 (2002).</p>
+</div>
+<div id="ref-Winglee:2016ju">
+<p>130. Winglee, K. <em>et al.</em> Whole Genome Sequencing of Mycobacterium africanum Strains from Mali Provides Insights into the Mechanisms of Geographic Restriction. <em>PLOS Neglected Tropical Diseases</em> <strong>10,</strong> e0004332 (2016).</p>
+</div>
+<div id="ref-Periwal:2014dj">
+<p>131. Periwal, V. <em>et al.</em> Comparative whole-genome analysis of clinical isolates reveals characteristic architecture of Mycobacterium tuberculosis pangenome. <em>PLoS ONE</em> <strong>10,</strong> e0122979–e0122979 (2014).</p>
+</div>
+<div id="ref-Watanabe:2012el">
+<p>132. Watanabe, S., Shiwa, Y., Itaya, M. &amp; Yoshikawa, H. Complete sequence of the first chimera genome constructed by cloning the whole genome of Synechocystis strain PCC6803 into the Bacillus subtilis 168 genome. <em>Journal of Bacteriology</em> <strong>194,</strong> 7007–7007 (2012).</p>
+</div>
+<div id="ref-Lukjancenko:2010gd">
+<p>18. Lukjancenko, O., Wassenaar, T. M. &amp; Ussery, D. W. Comparison of 61 sequenced Escherichia coli genomes. <em>Microbial Ecology</em> <strong>60,</strong> 708–720 (2010).</p>
+</div>
+<div id="ref-Pupo:2000by">
+<p>133. Pupo, G. M., Lan, R. &amp; Reeves, P. R. Multiple independent origins of Shigella clones of Escherichia coli and convergent evolution of many of their characteristics. <em>Proceedings of the National Academy of Sciences of the United States of America</em> <strong>97,</strong> 10567–10572 (2000).</p>
+</div>
+<div id="ref-Sims:2011hx">
+<p>135. Sims, G. E. &amp; Kim, S.-H. Whole-genome phylogeny of Escherichia coli/Shigella group by feature frequency profiles (FFPs). <em>Proceedings of the National Academy of Sciences of the United States of America</em> <strong>108,</strong> 8329–8334 (2011).</p>
+</div>
+<div id="ref-Delgado:2012ch">
+<p>136. Delgado, G. <em>et al.</em> Genetic characterization of atypical Citrobacter freundii. <em>PLoS ONE</em> <strong>8,</strong> e74120–e74120 (2012).</p>
+</div>
+<div id="ref-Petty:2009fq">
+<p>137. Petty, N. K. <em>et al.</em> The Citrobacter rodentium genome sequence reveals convergent evolution with human pathogenic Escherichia coli. <em>Journal of Bacteriology</em> <strong>192,</strong> 525–538 (2009).</p>
+</div>
+<div id="ref-Krzywinski:2012jj">
+<p>138. Krzywinski, M., Birol, I., Jones, S. J. M. &amp; Marra, M. A. Hive plots–rational approach to visualizing networks. <em>Briefings in bioinformatics</em> <strong>13,</strong> 627–644 (2012).</p>
+</div>
+<div id="ref-Ziemert:2014gi">
+<p>139. Ziemert, N. <em>et al.</em> Diversity and evolution of secondary metabolism in the marine actinomycete genus Salinispora. <em>Proceedings of the National Academy of Sciences of the United States of America</em> <strong>111,</strong> E1130–E1139 (2014).</p>
+</div>
+<div id="ref-Fischbach:2008fp">
+<p>140. Fischbach, M. A., Walsh, C. T. &amp; Clardy, J. The evolution of gene collectives: How natural selection drives chemical innovation. <em>Proceedings of the National Academy of Sciences of the United States of America</em> <strong>105,</strong> 4601–4608 (2008).</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="hs.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="discussion.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
+
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"facebook": true,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "serif",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    if (location.protocol !== "file:" && /^https?:/.test(script.src))
+      script.src  = script.src.replace(/^https?:/, '');
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

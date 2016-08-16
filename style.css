@@ -1,0 +1,67 @@
+span.newthought {
+  font-variant: small-caps;
+}
+span.abr {
+  text-transform: lowercase;
+  font-variant: small-caps;
+}
+a {
+  color: rgb(153,0,0);
+}
+p.caption, caption {
+  color: #777;
+  margin-top: 10px;
+  font-family: Lato, sans;
+  font-size: 9pt !important;
+  text-align: left;
+}
+table {
+    font-family: Lato, sans;
+    font-size: 10pt !important;
+}
+table td {
+    border: none;
+}
+thead tr {
+    border-top: 2pt black;
+    border-bottom: 1pt black;
+}
+tbody tr:last-child {
+    border-bottom: 2pt black;
+}
+p code {
+  white-space: inherit;
+}
+pre {
+  word-break: normal;
+  word-wrap: normal;
+}
+pre code {
+  white-space: inherit;
+}
+.page-inner h1 {
+    float: right;
+    text-align: right;
+}
+.page-inner h1 span.header-section-number {
+    display: block;
+    font-size: 144pt !important;
+    line-height: 96pt;
+    margin-top: 50pt;
+    color: #990000;
+}
+.level1>p:first-of-type {
+    clear: both;
+}
+.book .book-body .page-wrapper .page-inner section.normal div.quote blockquote {
+    border-left: none;
+}
+.book .book-body .page-wrapper .page-inner section.normal p {
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
+}
+.book .book-body .page-wrapper .page-inner section.normal div.figure {
+    margin: 30pt 0 30pt 0;
+}

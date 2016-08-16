@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Pangenome Tools for Rapid, Large-Scale Analysis of Bacterial Genomes</title>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+  <meta name="description" content="a dissertation submitted in partial fulfillment of the requirements for the degree of Doctor of Philosophy in Systems Biology">
+  <meta name="generator" content="bookdown 0.1.4 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Pangenome Tools for Rapid, Large-Scale Analysis of Bacterial Genomes" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="a dissertation submitted in partial fulfillment of the requirements for the degree of Doctor of Philosophy in Systems Biology" />
+  <meta name="github-repo" content="thomasp85/phd_dissertation" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Pangenome Tools for Rapid, Large-Scale Analysis of Bacterial Genomes" />
+  
+  <meta name="twitter:description" content="a dissertation submitted in partial fulfillment of the requirements for the degree of Doctor of Philosophy in Systems Biology" />
+  
+
+<meta name="author" content="Thomas Lin Pedersen">
+
+<meta name="date" content="2016-08-16">
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+</script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="pv.html">
+<link rel="next" href="bp.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=EB+Garamond" />
+
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext" />
+
+
+
+<link rel="stylesheet" href="base_style.css" type="text/css" />
+<link rel="stylesheet" href="font_style.css" type="text/css" />
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Frontmatter</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#dedication"><i class="fa fa-check"></i>Dedication</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#abstract"><i class="fa fa-check"></i>Abstract</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#preface"><i class="fa fa-check"></i>Preface</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#work-not-part-of-this-dissertation"><i class="fa fa-check"></i>Work not part of this dissertation</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#preface-for-the-online-version"><i class="fa fa-check"></i>Preface for the online version</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#the-microbial-pangenome"><i class="fa fa-check"></i><b>1.1</b> The Microbial Pangenome</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="intro.html"><a href="intro.html#use-of-pangenomes"><i class="fa fa-check"></i><b>1.1.1</b> Use of Pangenomes</a></li>
+<li class="chapter" data-level="1.1.2" data-path="intro.html"><a href="intro.html#creation-of-pangenomes"><i class="fa fa-check"></i><b>1.1.2</b> Creation of Pangenomes</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#visualizing-genomic-information"><i class="fa fa-check"></i><b>1.2</b> Visualizing Genomic Information</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="intro.html"><a href="intro.html#visualizing-a-genome"><i class="fa fa-check"></i><b>1.2.1</b> Visualizing a Genome</a></li>
+<li class="chapter" data-level="1.2.2" data-path="intro.html"><a href="intro.html#showing-genome-relationships"><i class="fa fa-check"></i><b>1.2.2</b> Showing Genome Relationships</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="intro.html"><a href="intro.html#the-following-chapters"><i class="fa fa-check"></i><b>1.3</b> The Following Chapters</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="fmf.html"><a href="fmf.html"><i class="fa fa-check"></i><b>2</b> How to Build a Pangenome</a></li>
+<li class="chapter" data-level="3" data-path="pv.html"><a href="pv.html"><i class="fa fa-check"></i><b>3</b> What’s in a Pangenome</a></li>
+<li class="chapter" data-level="4" data-path="hs.html"><a href="hs.html"><i class="fa fa-check"></i><b>4</b> It’s Pangenomes All the Way Down</a></li>
+<li class="chapter" data-level="5" data-path="bp.html"><a href="bp.html"><i class="fa fa-check"></i><b>5</b> The Sum of it All</a><ul>
+<li class="chapter" data-level="5.1" data-path="bp.html"><a href="bp.html#an-overview-of-the-bacterial-pangenome"><i class="fa fa-check"></i><b>5.1</b> An Overview of the Bacterial Pangenome</a></li>
+<li class="chapter" data-level="5.2" data-path="bp.html"><a href="bp.html#looking-at-the-panchromosome"><i class="fa fa-check"></i><b>5.2</b> Looking at the Panchromosome</a></li>
+<li class="chapter" data-level="5.3" data-path="bp.html"><a href="bp.html#a-very-large-set-family"><i class="fa fa-check"></i><b>5.3</b> A Very Large Set Family</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="bp.html"><a href="bp.html#the-link-to-taxonomy"><i class="fa fa-check"></i><b>5.3.1</b> The Link to Taxonomy</a></li>
+<li class="chapter" data-level="5.3.2" data-path="bp.html"><a href="bp.html#data-quality-and-lack-thereof"><i class="fa fa-check"></i><b>5.3.2</b> Data Quality and Lack Thereof</a></li>
+<li class="chapter" data-level="5.3.3" data-path="bp.html"><a href="bp.html#the-curious-case-of-escherichia-and-shigella"><i class="fa fa-check"></i><b>5.3.3</b> The Curious Case of Escherichia and Shigella</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="discussion.html"><a href="discussion.html"><i class="fa fa-check"></i><b>6</b> Taking a Step Back</a><ul>
+<li class="chapter" data-level="6.1" data-path="discussion.html"><a href="discussion.html#the-why-of-it-all"><i class="fa fa-check"></i><b>6.1</b> The “Why” of it All</a><ul>
+<li class="chapter" data-level="6.1.1" data-path="discussion.html"><a href="discussion.html#why-you-would-want-a-large-pangenome"><i class="fa fa-check"></i><b>6.1.1</b> Why You Would Want a Large Pangenome</a></li>
+<li class="chapter" data-level="6.1.2" data-path="discussion.html"><a href="discussion.html#why-you-would-want-a-top-taxon-pangenome"><i class="fa fa-check"></i><b>6.1.2</b> Why You Would Want a Top-Taxon Pangenome</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="discussion.html"><a href="discussion.html#the-future-of-large-scale-pangenome-analysis"><i class="fa fa-check"></i><b>6.2</b> The Future of Large-Scale Pangenome Analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="conclusion.html"><a href="conclusion.html"><i class="fa fa-check"></i><b>7</b> This is the End</a></li>
+<li class="chapter" data-level="8" data-path="supplementary-figures.html"><a href="supplementary-figures.html"><i class="fa fa-check"></i><b>8</b> Supplementary Figures</a><ul>
+<li class="chapter" data-level="8.1" data-path="supplementary-figures.html"><a href="supplementary-figures.html#FMFsupfig"><i class="fa fa-check"></i><b>8.1</b> FindMyFriends: A Framework for Fast and Accurate Pangenome Analysis of Thousands of Diverse Genomes</a></li>
+<li class="chapter" data-level="8.2" data-path="supplementary-figures.html"><a href="supplementary-figures.html#PVsupfig"><i class="fa fa-check"></i><b>8.2</b> PanViz: Interactive Visualization of the Structure of Functionally Annotated Pangenomes</a></li>
+<li class="chapter" data-level="8.3" data-path="supplementary-figures.html"><a href="supplementary-figures.html#HSsupfig"><i class="fa fa-check"></i><b>8.3</b> Hierarchical Sets: Analyzing Pangenome Structure through Scalable Set Visualizations</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="supdata.html"><a href="supdata.html"><i class="fa fa-check"></i><b>9</b> Supplementary Data</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Pangenome Tools for Rapid, Large-Scale Analysis of Bacterial Genomes</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="hs" class="section level1">
+<h1><span class="header-section-number">4</span> It’s Pangenomes All the Way Down</h1>
+<blockquote>
+<p>“I have a strong feeling that the subject of evolution is beautiful without the excuse of creationists needing to be bashed.”</p>
+<p>— Richard Dawkins, <em>Evolutionary biologist</em></p>
+</blockquote>
+<p><span class="newthought">Hierarchical Sets, which will be introduced in this chapter</span>, is an attempt to provide a visualization approach that communicate the relationship between genomes in a pangenome, using native pangenome metrics. The aim has been to replicate the information encoded in the pangenome visualizations based on Venn diagrams, where there is a clear mapping between core, accessory, and singleton sizes and the different areas of circle overlaps. The reason for not using Venn diagrams is that they lack scalability, getting progressively less interpretable above three genomes. Venn diagrams are a natural choice for pangenome data because pangenome data, as well as the core, accessory, and singleton definitions, has clear analogies in set algebra. Thus, it seems that set visualization approaches are a natural fit for pangenome data. Unfortunately, while progress has been made when it comes to scalable set visualizations (see e.g. <span class="citation"><a href="#ref-Lex:2014fi">122</a></span> and <span class="citation"><a href="#ref-Alsallakh:2013hk">123</a></span>), none of the current approaches support the scale made possible by <span class="abr">FindMyFriends</span>. In order to effectively utilize the data encoded in pangenomes containing thousands of genomes it was necessary to develop an entirely new approach to set visualization.</p>
+<p>The following article, submitted to <a href="http://bioinformatics.oxfordjournals.org">Bioinformatics</a>, describes the motivation and theory behind the <span class="abr">Hierarchical Sets</span> visualizations and how it relates to pangenome analysis. While the examples in the paper are based on a relatively small pangenome containing 46 genomes, this number of genomes is already outside the usability range of other approaches to set visualization. Chapter 4 will show how <span class="abr">Hierarchical Sets</span> scale to much larger pangenomes. Supplementary figures are available in appendix .</p>
+<p><strong>Article 3</strong></p>
+<p><a href="articles/hierarchicalSets.pdf">Hierarchical Sets: Analyzing Pangenome Structure through Scalable Set Visualizations</a></p>
+<p>The difference between the two visualizations presented in this dissertation is stark. <span class="abr">PanViz</span> is flashy and engaging while <span class="abr">Hierarchical Sets</span> is static and more subdued. This reflects the basic difference between the goals of the two visualizations. The basic mapping between data and visual elements employed in <span class="abr">PanViz</span> are all well defined and the achievement of the visualization is more related to how it uses these prior techniques to describe pangenome data. In the case of <span class="abr">Hierarchical Sets</span> a completely new mapping between a fundamental data entity, a set family, and a visual representation is created. The fact that this mapping is so well-suited for pangenome data is a side-effect of pangenomes having a clear set-algebraic interpretation. I strongly believe that new solutions to fundamental visualization problems, such as the problem of scalable set visualization, should be as bare-bone as possible, optimally avoiding the need for interaction. In this way the visualization can easily be augmented, adapted, or incorporated into other, more specialized, visualizations. <span class="abr">Hierarchical Sets</span> can easily be improved further as a pure pangenome analysis tool, by incorporating domain-specific functionalities, or be used to improve the pangenome overview panel in <span class="abr">PanViz</span>. This would be more difficult if the basic visualization technique required interactions and animations in order to solve its task, such as the case with <span class="abr">Radial Sets</span><span class="citation"><sup><a href="#ref-Alsallakh:2013hk">123</a></sup></span>.</p>
+
+</div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-Lex:2014fi">
+<p>122. Lex, A., Gehlenborg, N., Strobelt, H., Vuillemot, R. &amp; Pfister, H. UpSet: Visualization of Intersecting Sets. <em>IEEE transactions on visualization and computer graphics</em> <strong>20,</strong> 1983–1992 (2014).</p>
+</div>
+<div id="ref-Alsallakh:2013hk">
+<p>123. Alsallakh, B., Aigner, W., Miksch, S. &amp; Hauser, H. Radial Sets: Interactive Visual Analysis of Large Overlapping Sets. <em>IEEE transactions on visualization and computer graphics</em> <strong>19,</strong> 2496–2505 (2013).</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="pv.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="bp.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
+
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"facebook": true,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "serif",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    if (location.protocol !== "file:" && /^https?:/.test(script.src))
+      script.src  = script.src.replace(/^https?:/, '');
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

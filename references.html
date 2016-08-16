@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Pangenome Tools for Rapid, Large-Scale Analysis of Bacterial Genomes</title>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+  <meta name="description" content="a dissertation submitted in partial fulfillment of the requirements for the degree of Doctor of Philosophy in Systems Biology">
+  <meta name="generator" content="bookdown 0.1.4 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Pangenome Tools for Rapid, Large-Scale Analysis of Bacterial Genomes" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="a dissertation submitted in partial fulfillment of the requirements for the degree of Doctor of Philosophy in Systems Biology" />
+  <meta name="github-repo" content="thomasp85/phd_dissertation" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Pangenome Tools for Rapid, Large-Scale Analysis of Bacterial Genomes" />
+  
+  <meta name="twitter:description" content="a dissertation submitted in partial fulfillment of the requirements for the degree of Doctor of Philosophy in Systems Biology" />
+  
+
+<meta name="author" content="Thomas Lin Pedersen">
+
+<meta name="date" content="2016-08-16">
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+</script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="supdata.html">
+
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=EB+Garamond" />
+
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext" />
+
+
+
+<link rel="stylesheet" href="base_style.css" type="text/css" />
+<link rel="stylesheet" href="font_style.css" type="text/css" />
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Frontmatter</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#dedication"><i class="fa fa-check"></i>Dedication</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#abstract"><i class="fa fa-check"></i>Abstract</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#preface"><i class="fa fa-check"></i>Preface</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#work-not-part-of-this-dissertation"><i class="fa fa-check"></i>Work not part of this dissertation</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#preface-for-the-online-version"><i class="fa fa-check"></i>Preface for the online version</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#the-microbial-pangenome"><i class="fa fa-check"></i><b>1.1</b> The Microbial Pangenome</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="intro.html"><a href="intro.html#use-of-pangenomes"><i class="fa fa-check"></i><b>1.1.1</b> Use of Pangenomes</a></li>
+<li class="chapter" data-level="1.1.2" data-path="intro.html"><a href="intro.html#creation-of-pangenomes"><i class="fa fa-check"></i><b>1.1.2</b> Creation of Pangenomes</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#visualizing-genomic-information"><i class="fa fa-check"></i><b>1.2</b> Visualizing Genomic Information</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="intro.html"><a href="intro.html#visualizing-a-genome"><i class="fa fa-check"></i><b>1.2.1</b> Visualizing a Genome</a></li>
+<li class="chapter" data-level="1.2.2" data-path="intro.html"><a href="intro.html#showing-genome-relationships"><i class="fa fa-check"></i><b>1.2.2</b> Showing Genome Relationships</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="intro.html"><a href="intro.html#the-following-chapters"><i class="fa fa-check"></i><b>1.3</b> The Following Chapters</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="fmf.html"><a href="fmf.html"><i class="fa fa-check"></i><b>2</b> How to Build a Pangenome</a></li>
+<li class="chapter" data-level="3" data-path="pv.html"><a href="pv.html"><i class="fa fa-check"></i><b>3</b> What’s in a Pangenome</a></li>
+<li class="chapter" data-level="4" data-path="hs.html"><a href="hs.html"><i class="fa fa-check"></i><b>4</b> It’s Pangenomes All the Way Down</a></li>
+<li class="chapter" data-level="5" data-path="bp.html"><a href="bp.html"><i class="fa fa-check"></i><b>5</b> The Sum of it All</a><ul>
+<li class="chapter" data-level="5.1" data-path="bp.html"><a href="bp.html#an-overview-of-the-bacterial-pangenome"><i class="fa fa-check"></i><b>5.1</b> An Overview of the Bacterial Pangenome</a></li>
+<li class="chapter" data-level="5.2" data-path="bp.html"><a href="bp.html#looking-at-the-panchromosome"><i class="fa fa-check"></i><b>5.2</b> Looking at the Panchromosome</a></li>
+<li class="chapter" data-level="5.3" data-path="bp.html"><a href="bp.html#a-very-large-set-family"><i class="fa fa-check"></i><b>5.3</b> A Very Large Set Family</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="bp.html"><a href="bp.html#the-link-to-taxonomy"><i class="fa fa-check"></i><b>5.3.1</b> The Link to Taxonomy</a></li>
+<li class="chapter" data-level="5.3.2" data-path="bp.html"><a href="bp.html#data-quality-and-lack-thereof"><i class="fa fa-check"></i><b>5.3.2</b> Data Quality and Lack Thereof</a></li>
+<li class="chapter" data-level="5.3.3" data-path="bp.html"><a href="bp.html#the-curious-case-of-escherichia-and-shigella"><i class="fa fa-check"></i><b>5.3.3</b> The Curious Case of Escherichia and Shigella</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="discussion.html"><a href="discussion.html"><i class="fa fa-check"></i><b>6</b> Taking a Step Back</a><ul>
+<li class="chapter" data-level="6.1" data-path="discussion.html"><a href="discussion.html#the-why-of-it-all"><i class="fa fa-check"></i><b>6.1</b> The “Why” of it All</a><ul>
+<li class="chapter" data-level="6.1.1" data-path="discussion.html"><a href="discussion.html#why-you-would-want-a-large-pangenome"><i class="fa fa-check"></i><b>6.1.1</b> Why You Would Want a Large Pangenome</a></li>
+<li class="chapter" data-level="6.1.2" data-path="discussion.html"><a href="discussion.html#why-you-would-want-a-top-taxon-pangenome"><i class="fa fa-check"></i><b>6.1.2</b> Why You Would Want a Top-Taxon Pangenome</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="discussion.html"><a href="discussion.html#the-future-of-large-scale-pangenome-analysis"><i class="fa fa-check"></i><b>6.2</b> The Future of Large-Scale Pangenome Analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="conclusion.html"><a href="conclusion.html"><i class="fa fa-check"></i><b>7</b> This is the End</a></li>
+<li class="chapter" data-level="8" data-path="supplementary-figures.html"><a href="supplementary-figures.html"><i class="fa fa-check"></i><b>8</b> Supplementary Figures</a><ul>
+<li class="chapter" data-level="8.1" data-path="supplementary-figures.html"><a href="supplementary-figures.html#FMFsupfig"><i class="fa fa-check"></i><b>8.1</b> FindMyFriends: A Framework for Fast and Accurate Pangenome Analysis of Thousands of Diverse Genomes</a></li>
+<li class="chapter" data-level="8.2" data-path="supplementary-figures.html"><a href="supplementary-figures.html#PVsupfig"><i class="fa fa-check"></i><b>8.2</b> PanViz: Interactive Visualization of the Structure of Functionally Annotated Pangenomes</a></li>
+<li class="chapter" data-level="8.3" data-path="supplementary-figures.html"><a href="supplementary-figures.html#HSsupfig"><i class="fa fa-check"></i><b>8.3</b> Hierarchical Sets: Analyzing Pangenome Structure through Scalable Set Visualizations</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="supdata.html"><a href="supdata.html"><i class="fa fa-check"></i><b>9</b> Supplementary Data</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Pangenome Tools for Rapid, Large-Scale Analysis of Bacterial Genomes</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="references" class="section level1 unnumbered">
+<h1>References</h1>
+
+<div id="refs" class="references">
+<div>
+<p>1. Medini, D., Donati, C., Tettelin, H., Masignani, V. &amp; Rappuoli, R. The microbial pan-genome. <em>Current Opinion in Genetics &amp; Development</em> <strong>15,</strong> 589–594 (2004).</p>
+</div>
+<div>
+<p>2. Tettelin, H. <em>et al.</em> Genome analysis of multiple pathogenic isolates of Streptococcus agalactiae: implications for the microbial ‘pan-genome’. <em>Proceedings of the National Academy of Sciences of the United States of America</em> <strong>102,</strong> 13950–13955 (2005).</p>
+</div>
+<div>
+<p>3. Leekitcharoenphon, P. <em>et al.</em> Global Genomic Epidemiology of Salmonella enterica Serovar Typhimurium DT104. <em>Applied and Environmental Microbiology</em> <strong>82,</strong> 2516–2526 (2016).</p>
+</div>
+<div>
+<p>4. Njamkepo, E. <em>et al.</em> Global phylogeography and evolutionary history of Shigella dysenteriae type 1. <em>Nature Microbiology</em> <strong>1,</strong> 16027 (2016).</p>
+</div>
+<div>
+<p>5. Lapierre, P. &amp; Gogarten, J. P. Estimating the size of the bacterial pan-genome. <em>Trends in Genetics</em> <strong>25,</strong> 107–110 (2009).</p>
+</div>
+<div>
+<p>6. Collingro, A. <em>et al.</em> Unity in variety–the pan-genome of the Chlamydiae. <em>Molecular Biology and Evolution</em> <strong>28,</strong> 3253–3270 (2011).</p>
+</div>
+<div>
+<p>7. Collins, R. E. &amp; Higgs, P. G. Testing the infinitely many genes model for the evolution of the bacterial core genome and pangenome. <em>Molecular Biology and Evolution</em> <strong>29,</strong> 3413–3425 (2012).</p>
+</div>
+<div>
+<p>8. Lefébure, T. &amp; Stanhope, M. J. Evolution of the core and pan-genome of Streptococcus: positive selection, recombination, and genome composition. <em>Genome biology</em> <strong>8,</strong> R71 (2007).</p>
+</div>
+<div>
+<p>9. Hiller, N. L. <em>et al.</em> Comparative genomic analyses of seventeen Streptococcus pneumoniae strains: insights into the pneumococcal supragenome. <em>Journal of Bacteriology</em> <strong>189,</strong> 8186–8195 (2007).</p>
+</div>
+<div>
+<p>10. Hogg, J. S. <em>et al.</em> Characterization and modeling of the Haemophilus influenzae core and supragenomes based on the complete genomic sequences of Rd and 12 clinical nontypeable strains. <em>Genome biology</em> <strong>8,</strong> R103 (2007).</p>
+</div>
+<div>
+<p>11. Kettler, G. C. <em>et al.</em> Patterns and implications of gene gain and loss in the evolution of Prochlorococcus. <em>PLoS genetics</em> <strong>3,</strong> e231 (2007).</p>
+</div>
+<div>
+<p>12. Schoen, C. <em>et al.</em> Whole-genome comparison of disease and carriage strains provides insights into virulence evolution in Neisseria meningitidis. <em>Proceedings of the National Academy of Sciences of the United States of America</em> <strong>105,</strong> 3473–3478 (2008).</p>
+</div>
+<div>
+<p>13. Rasko, D. A. <em>et al.</em> The pangenome structure of Escherichia coli: comparative genomic analysis of E. coli commensal and pathogenic isolates. <em>Journal of Bacteriology</em> <strong>190,</strong> 6881–6893 (2008).</p>
+</div>
+<div>
+<p>14. Scaria, J. <em>et al.</em> Analysis of ultra low genome conservation in Clostridium difficile. <em>PLoS ONE</em> <strong>5,</strong> e15147–e15147 (2009).</p>
+</div>
+<div>
+<p>15. Bakker, H. C. den <em>et al.</em> Comparative genomics of the bacterial genus Listeria: Genome evolution is characterized by limited gene acquisition and limited gene loss. <em>BMC Genomics</em> <strong>11,</strong> 688–688 (2009).</p>
+</div>
+<div>
+<p>16. Donati, C. <em>et al.</em> Structure and dynamics of the pan-genome of Streptococcus pneumoniae and closely related species. <em>Genome biology</em> <strong>11,</strong> R107–R107 (2009).</p>
+</div>
+<div>
+<p>17. Lefébure, T., Bitar, P. D. P., Suzuki, H. &amp; Stanhope, M. J. Evolutionary dynamics of complete Campylobacter pan-genomes and the bacterial species concept. <em>Genome Biology and Evolution</em> <strong>2,</strong> 646–655 (2010).</p>
+</div>
+<div>
+<p>18. Lukjancenko, O., Wassenaar, T. M. &amp; Ussery, D. W. Comparison of 61 sequenced Escherichia coli genomes. <em>Microbial Ecology</em> <strong>60,</strong> 708–720 (2010).</p>
+</div>
+<div>
+<p>19. Schaik, W. van <em>et al.</em> Pyrosequencing-based comparative genome analysis of the nosocomial pathogen Enterococcus faecium and identification of a large transferable pathogenicity island. <em>BMC Genomics</em> <strong>11,</strong> 239 (2010).</p>
+</div>
+<div>
+<p>20. Eppinger, M. <em>et al.</em> Genome sequence of the deep-rooted Yersinia pestis strain Angola reveals new insights into the evolution and pangenome of the plague bacterium. <em>Journal of Bacteriology</em> <strong>192,</strong> 1685–1699 (2010).</p>
+</div>
+<div>
+<p>21. Bottacini, F. <em>et al.</em> Comparative genomics of the genus Bifidobacterium. <em>Microbiology (Reading, England)</em> <strong>156,</strong> 3243–3254 (2010).</p>
+</div>
+<div>
+<p>22. Boissy, R. <em>et al.</em> Comparative supragenomic analyses among the pathogens Staphylococcus aureus, Streptococcus pneumoniae, and Haemophilus influenzae using a modification of the finite supragenome model. <em>BMC Genomics</em> <strong>12,</strong> 187–187 (2010).</p>
+</div>
+<div>
+<p>23. Jacobsen, A., Hendriksen, R. S., Aarestrup, F. M., Ussery, D. W. &amp; Friis, C. The Salmonella enterica pan-genome. <em>Microbial Ecology</em> <strong>62,</strong> 487–504 (2011).</p>
+</div>
+<div>
+<p>24. Kaas, R. S., Friis, C., Ussery, D. W. &amp; Aarestrup, F. M. Estimating variation within the genes and inferring the phylogeny of 186 sequenced diverse Escherichia coli genomes. <em>BMC Genomics</em> <strong>13,</strong> 577–577 (2011).</p>
+</div>
+<div>
+<p>25. Davie, J. J. <em>et al.</em> Comparative analysis and supragenome modeling of twelve Moraxella catarrhalis clinical isolates. <em>BMC Genomics</em> <strong>12,</strong> 70 (2011).</p>
+</div>
+<div>
+<p>26. Budroni, S. <em>et al.</em> Neisseria meningitidis is structured in clades associated with restriction modification systems that modulate homologous recombination. <em>Proceedings of the National Academy of Sciences of the United States of America</em> <strong>108,</strong> 4494–4499 (2011).</p>
+</div>
+<div>
+<p>27. Broadbent, J. R. <em>et al.</em> Analysis of the Lactobacillus casei supragenome and its influence in species evolution and lifestyle adaptation. <em>BMC Genomics</em> <strong>13,</strong> 533–533 (2011).</p>
+</div>
+<div>
+<p>28. Snipen, L. G. &amp; Ussery, D. W. A domain sequence approach to pangenomics: applications to Escherichia coli. <em>F1000Research</em> <strong>1,</strong> 19 (2012).</p>
+</div>
+<div>
+<p>29. Lukjancenko, O., Ussery, D. W. &amp; Wassenaar, T. M. Comparative genomics of bifidobacterium, lactobacillus and related probiotic genera. <em>Microbial Ecology</em> <strong>63,</strong> 651–673 (2012).</p>
+</div>
+<div>
+<p>30. Song, L. <em>et al.</em> Genetic variability of mutans streptococci revealed by wide whole-genome sequencing. <em>BMC Genomics</em> <strong>14,</strong> 430–430 (2012).</p>
+</div>
+<div>
+<p>31. Smokvina, T. <em>et al.</em> Lactobacillus paracasei comparative genomics: towards species pan-genome definition and exploitation of diversity. <em>PLoS ONE</em> <strong>8,</strong> e68731–e68731 (2012).</p>
+</div>
+<div>
+<p>32. Ahmed, A. <em>et al.</em> Comparative genomic analyses of 17 clinical isolates of Gardnerella vaginalis provide evidence of multiple genetically isolated clades consistent with subspeciation into genovars. <em>Journal of Bacteriology</em> <strong>194,</strong> 3922–3937 (2012).</p>
+</div>
+<div>
+<p>33. Lehmann, J. S. <em>et al.</em> Pathogenomic inference of virulence-associated genes in Leptospira interrogans. <em>PLOS Neglected Tropical Diseases</em> <strong>7,</strong> e2468–e2468 (2012).</p>
+</div>
+<div>
+<p>34. Gan, H. M., Hudson, A. O., Rahman, A. Y. A., Chan, K.-G. &amp; Savka, M. A. Comparative genomic analysis of six bacteria belonging to the genus Novosphingobium: insights into marine adaptation, cell-cell signaling and bioremediation. <em>BMC Genomics</em> <strong>14,</strong> 431–431 (2012).</p>
+</div>
+<div>
+<p>35. Kuenne, C. <em>et al.</em> Reassessment of the Listeria monocytogenes pan-genome reveals dynamic integration hotspots and mobile genetic elements as major components of the accessory genome. <em>BMC Genomics</em> <strong>14,</strong> 47 (2013).</p>
+</div>
+<div>
+<p>36. Gomez-Valero, L. &amp; Buchrieser, C. Genome dynamics in Legionella: the basis of versatility and adaptation to intracellular replication. <em>Cold Spring Harbor perspectives in medicine</em> <strong>3,</strong> 1–16 (2013).</p>
+</div>
+<div>
+<p>37. Baddam, R., Kumar, N., Shaik, S., Lankapalli, A. K. &amp; Ahmed, N. Genome dynamics and evolution of Salmonella Typhi strains from the typhoid-endemic zones. <em>Scientific reports</em> <strong>4,</strong> 7457–7457 (2013).</p>
+</div>
+<div>
+<p>38. Goh, K. M. <em>et al.</em> Analysis of anoxybacillus genomes from the aspects of lifestyle adaptations, prophage diversity, and carbohydrate metabolism. <em>PLoS ONE</em> <strong>9,</strong> e90549–e90549 (2013).</p>
+</div>
+<div>
+<p>39. De Maayer, P. <em>et al.</em> Analysis of the Pantoea ananatis pan-genome reveals factors underlying its ability to colonize and interact with plant, insect and vertebrate hosts. <em>BMC Genomics</em> <strong>15,</strong> 404 (2014).</p>
+</div>
+<div>
+<p>40. Richards, V. P. <em>et al.</em> Phylogenomics and the dynamic genome evolution of the genus Streptococcus. <em>Genome Biology and Evolution</em> <strong>6,</strong> 741–753 (2014).</p>
+</div>
+<div>
+<p>41. Jun, S.-R. <em>et al.</em> Diversity of Pseudomonas Genomes, Including Populus-Associated Isolates, as Revealed by Comparative Genome Analysis. <em>Applied and Environmental Microbiology</em> <strong>82,</strong> 375–383 (2014).</p>
+</div>
+<div>
+<p>42. Chan, A. P. <em>et al.</em> A novel method of consensus pan-chromosome assembly and large-scale comparative analysis reveal the highly flexible pan-genome of Acinetobacter baumannii. <em>Genome biology</em> <strong>16,</strong> 143–143 (2014).</p>
+</div>
+<div>
+<p>43. Siewert, C. <em>et al.</em> Complete genome determination and analysis of Acholeplasma oculi strain 19L, highlighting the loss of basic genetic features in the Acholeplasmataceae. <em>BMC Genomics</em> <strong>15,</strong> 931 (2014).</p>
+</div>
+<div>
+<p>44. Gomez-Valero, L. <em>et al.</em> Comparative analyses of Legionella species identifies genetic features of strains causing Legionnaires disease. <em>Genome biology</em> <strong>15,</strong> 274 (2014).</p>
+</div>
+<div>
+<p>45. Li, H. <em>et al.</em> Evolution of carbapenem-resistant Acinetobacter baumannii revealed through whole-genome sequencing and comparative genomic analysis. <em>Antimicrobial Agents and Chemotherapy</em> <strong>59,</strong> 1168–1176 (2015).</p>
+</div>
+<div>
+<p>46. Fondi, M. <em>et al.</em> Genomic and phenotypic characterization of the species Acinetobacter venetianus. <em>Scientific reports</em> <strong>6,</strong> 21985–21985 (2015).</p>
+</div>
+<div>
+<p>47. Lynch, K. M. <em>et al.</em> Genomics of Weissella cibaria with an examination of its metabolic traits. <em>Microbiology (Reading, England)</em> <strong>161,</strong> 914–930 (2015).</p>
+</div>
+<div>
+<p>48. Das, S. <em>et al.</em> Characterization of Three Mycobacterium spp. with Potential Use in Bioremediation by Genome Sequencing and Comparative Genomics. <em>Genome Biology and Evolution</em> <strong>7,</strong> 1871–1886 (2015).</p>
+</div>
+<div>
+<p>49. Das, S. <em>et al.</em> The Mycobacterium phlei Genome: Expectations and Surprises. <em>Genome Biology and Evolution</em> <strong>8,</strong> 975–985 (2015).</p>
+</div>
+<div>
+<p>50. Land, M. <em>et al.</em> Insights from 20 years of bacterial genome sequencing. <em>Functional &amp; Integrative Genomics</em> <strong>15,</strong> 141–161 (2015).</p>
+</div>
+<div>
+<p>51. Cleary, D. W. <em>et al.</em> Comparative genomics of carriage and disease isolates of Streptococcus pneumoniae serotype 22F reveals lineage specific divergence and niche adaptation. <em>Genome Biology and Evolution</em> (2016).</p>
+</div>
+<div>
+<p>52. Petrovska, L. <em>et al.</em> Microevolution of Monophasic Salmonella Typhimurium during Epidemic, United Kingdom, 2005-2010. <em>Emerging Infectious Diseases</em> <strong>22,</strong> 617–624 (2016).</p>
+</div>
+<div>
+<p>53. Fouts, D. E. <em>et al.</em> What Makes a Bacterial Species Pathogenic?:Comparative Genomic Analysis of the Genus Leptospira. <em>PLOS Neglected Tropical Diseases</em> <strong>10,</strong> e0004403–e0004403 (2016).</p>
+</div>
+<div>
+<p>54. Tettelin, H., Riley, D., Cattuto, C. &amp; Medini, D. Comparative genomics: the bacterial pan-genome. <em>Current opinion in microbiology</em> <strong>11,</strong> 472–477 (2008).</p>
+</div>
+<div>
+<p>55. Snipen, L. G., Almøy, T. &amp; Ussery, D. W. Microbial comparative pan-genomics using binomial mixture models. <em>BMC Genomics</em> <strong>10,</strong> 385 (2009).</p>
+</div>
+<div>
+<p>56. Baumdicker, F., Hess, W. R. &amp; Pfaffelhuber, P. The infinitely many genes model for the distributed genome of bacteria. <em>Genome Biology and Evolution</em> <strong>4,</strong> 443–456 (2011).</p>
+</div>
+<div>
+<p>57. Snipen, L. G. &amp; Ussery, D. W. Standard operating procedure for computing pangenome trees. <em>Standards in genomic sciences</em> <strong>2,</strong> 135–141 (2010).</p>
+</div>
+<div>
+<p>58. Karlsson, F. H., Ussery, D. W., Nielsen, J. &amp; Nookaew, I. A closer look at bacteroides: phylogenetic relationship and genomic implications of a life in the human gut. <em>Microbial Ecology</em> <strong>61,</strong> 473–485 (2011).</p>
+</div>
+<div>
+<p>59. Větrovský, T. &amp; Baldrian, P. The variability of the 16S rRNA gene in bacterial genomes and its consequences for bacterial community analyses. <em>PLoS ONE</em> <strong>8,</strong> e57923–e57923 (2012).</p>
+</div>
+<div>
+<p>60. Baumler, D. J., Peplinski, R. G., Reed, J. L., Glasner, J. D. &amp; Perna, N. T. The evolution of metabolic networks of E. coli. <em>BMC Systems Biology</em> <strong>5,</strong> 182–182 (2010).</p>
+</div>
+<div>
+<p>61. Bayjanov, J. R., Molenaar, D., Tzeneva, V., Siezen, R. J. &amp; Hijum, S. A. F. T. van. PhenoLink - a web-tool for linking phenotype to ~omics data for bacteria: application to gene-trait matching for Lactobacillus plantarum strains. <em>BMC Genomics</em> <strong>13,</strong> 170 (2012).</p>
+</div>
+<div>
+<p>62. Ceapa, C. <em>et al.</em> Correlation of Lactobacillus rhamnosus Genotypes and Carbohydrate Utilization Signatures Determined by Phenotype Profiling. <em>Applied and Environmental Microbiology</em> <strong>81,</strong> 5458–5470 (2015).</p>
+</div>
+<div>
+<p>63. Li, L., Stoeckert, C. J. &amp; Roos, D. S. OrthoMCL: identification of ortholog groups for eukaryotic genomes. <em>Genome Research</em> <strong>13,</strong> 2178–2189 (2003).</p>
+</div>
+<div>
+<p>64. Riley, D. R., Angiuoli, S. V., Crabtree, J., Dunning Hotopp, J. C. &amp; Tettelin, H. Using Sybil for interactive comparative genomics of microbes on the web. <em>Bioinformatics</em> <strong>28,</strong> 160–166 (2012).</p>
+</div>
+<div>
+<p>65. Page, A. J. <em>et al.</em> Roary: rapid large-scale prokaryote pan genome analysis. <em>Bioinformatics</em> btv421 (2015).</p>
+</div>
+<div>
+<p>66. Fouts, D. E., Brinkac, L., Beck, E., Inman, J. &amp; Sutton, G. PanOCT: automated clustering of orthologs using conserved gene neighborhood for pan-genomic analysis of bacterial strains and closely related species. <em>Nucleic Acids Research</em> (2012).</p>
+</div>
+<div>
+<p>67. Sahl, J. W., Caporaso, J. G., Rasko, D. A. &amp; Keim, P. The large-scale blast score ratio (LS-BSR) pipeline: a method to rapidly compare genetic content between bacterial genomes. <em>PeerJ</em> <strong>2,</strong> e332–e332 (2013).</p>
+</div>
+<div>
+<p>68. Dongen, S. M. van. Graph Clustering by Flow Simulation. (2000).</p>
+</div>
+<div>
+<p>69. Blom, J. <em>et al.</em> EDGAR: a software framework for the comparative analysis of prokaryotic genomes. <em>BMC Bioinformatics</em> <strong>10,</strong> 154–154 (2008).</p>
+</div>
+<div>
+<p>70. Laing, C. <em>et al.</em> Pan-genome sequence analysis using Panseq: an online tool for the rapid analysis of core and accessory genomic regions. <em>BMC Bioinformatics</em> <strong>11,</strong> 461–461 (2009).</p>
+</div>
+<div>
+<p>71. Bayjanov, J. R., Siezen, R. J. &amp; Hijum, S. A. F. T. van. PanCGHweb: a web tool for genotype calling in pangenome CGH data. <em>Bioinformatics</em> <strong>26,</strong> 1256–1257 (2010).</p>
+</div>
+<div>
+<p>72. Wozniak, M., Wong, L. &amp; Tiuryn, J. CAMBer: an approach to support comparative analysis of multiple bacterial strains. <em>BMC Genomics</em> <strong>12 Suppl 2,</strong> S6–S6 (2010).</p>
+</div>
+<div>
+<p>73. Brittnacher, M. J. <em>et al.</em> PGAT: a multistrain analysis resource for microbial genomes. <em>Bioinformatics</em> <strong>27,</strong> 2429–2430 (2011).</p>
+</div>
+<div>
+<p>74. Zhao, Y. <em>et al.</em> PGAP: pan-genomes analysis pipeline. <em>Bioinformatics</em> <strong>28,</strong> 416–418 (2012).</p>
+</div>
+<div>
+<p>75. Santos, A. R. <em>et al.</em> PANNOTATOR: an automated tool for annotation of pan-genomes. <em>Genetics and Molecular Research</em> <strong>12,</strong> 2982–2989 (2013).</p>
+</div>
+<div>
+<p>76. Contreras-Moreira, B. &amp; Vinuesa, P. GET_HOMOLOGUES, a versatile software package for scalable and robust microbial pangenome analysis. <em>Applied and Environmental Microbiology</em> <strong>79,</strong> 7696–7701 (2013).</p>
+</div>
+<div>
+<p>77. Lukjancenko, O., Thomsen, M. C., Voldby Larsen, M. &amp; Ussery, D. W. PanFunPro: PAN-genome analysis based on FUNctional PROfiles. <em>F1000Research</em> (2013).</p>
+</div>
+<div>
+<p>78. Benedict, M. N., Henriksen, J. R., Metcalf, W. W., Whitaker, R. J. &amp; Price, N. D. ITEP: an integrated toolkit for exploration of microbial pan-genomes. <em>BMC Genomics</em> <strong>15,</strong> 8 (2014).</p>
+</div>
+<div>
+<p>79. Marcus, S., Lee, H. &amp; Schatz, M. C. SplitMEM: a graphical algorithm for pan-genome analysis with suffix skips. <em>Bioinformatics</em> <strong>30,</strong> 3476–3483 (2014).</p>
+</div>
+<div>
+<p>80. Treangen, T. J., Ondov, B. D., Koren, S. &amp; Phillippy, A. M. The Harvest suite for rapid core-genome alignment and visualization of thousands of intraspecific microbial genomes. <em>Genome biology</em> <strong>15,</strong> D571 (2014).</p>
+</div>
+<div>
+<p>81. Snipen, L. G. &amp; Liland, K. H. micropan: an R-package for microbial pan-genomics. <em>BMC Bioinformatics</em> <strong>16,</strong> 79 (2015).</p>
+</div>
+<div>
+<p>82. Paul, S., Bhardwaj, A., Bag, S. K., Sokurenko, E. V. &amp; Chattopadhyay, S. PanCoreGen - Profiling, detecting, annotating protein-coding genes in microbial genomes. <em>Genomics</em> <strong>106,</strong> 367–372 (2015).</p>
+</div>
+<div>
+<p>83. Chaudhari, N. M., Gupta, V. K. &amp; Dutta, C. BPGA- an ultra-fast pan-genome analysis pipeline. <em>Scientific reports</em> <strong>6,</strong> 24373–24373 (2015).</p>
+</div>
+<div>
+<p>84. Baier, U., Beller, T. &amp; Ohlebusch, E. Graphical pan-genome analysis with compressed suffix trees and the Burrows-Wheeler transform. <em>Bioinformatics</em> <strong>32,</strong> 497–504 (2016).</p>
+</div>
+<div>
+<p>85. Jones, P. <em>et al.</em> InterProScan 5: genome-scale protein function classification. <em>Bioinformatics</em> <strong>30,</strong> 1236–1240 (2014).</p>
+</div>
+<div>
+<p>86. Zdobnov, E. M. &amp; Apweiler, R. InterProScan - an integration platform for the signature-recognition methods in InterPro. <em>Bioinformatics</em> <strong>17,</strong> 847–848 (2001).</p>
+</div>
+<div>
+<p>87. Eddy, S. R. Accelerated Profile HMM Searches. <em>PLoS Computational Biology</em> <strong>7,</strong> e1002195–e1002195 (2011).</p>
+</div>
+<div>
+<p>88. Li, W. &amp; Godzik, A. Cd-hit: a fast program for clustering and comparing large sets of protein or nucleotide sequences. <em>Bioinformatics</em> <strong>22,</strong> 1658–1659 (2006).</p>
+</div>
+<div>
+<p>89. Fu, L., Niu, B., Zhu, Z., Wu, S. &amp; Li, W. CD-HIT: accelerated for clustering the next-generation sequencing data. <em>Bioinformatics</em> <strong>28,</strong> 3150–3152 (2012).</p>
+</div>
+<div>
+<p>90. Edgar, R. C. Search and clustering orders of magnitude faster than BLAST. <em>Bioinformatics</em> <strong>26,</strong> 2460–2461 (2010).</p>
+</div>
+<div>
+<p>91. Seret, M.-L. &amp; Baret, P. V. IONS: Identification of Orthologs by Neighborhood and Similarity-an Automated Method to Identify Orthologs in Chromosomal Regions of Common Evolutionary Ancestry and its Application to Hemiascomycetous Yeasts. <em>Evolutionary bioinformatics online</em> <strong>7,</strong> 123–133 (2011).</p>
+</div>
+<div>
+<p>92. Abeel, T., Van Parys, T., Saeys, Y., Galagan, J. &amp; Van de Peer, Y. GenomeView: a next-generation genome browser. <em>Nucleic Acids Research</em> <strong>40,</strong> e12–e12 (2012).</p>
+</div>
+<div>
+<p>93. Carver, T., Harris, S. R., Berriman, M., Parkhill, J. &amp; McQuillan, J. A. Artemis: an integrated platform for visualization and analysis of high-throughput sequence-based experimental data. <em>Bioinformatics</em> <strong>28,</strong> 464–469 (2012).</p>
+</div>
+<div>
+<p>94. Carver, T., Thomson, N., Bleasby, A., Berriman, M. &amp; Parkhill, J. <strong>DNAPlotter: circular and linear interactive genome visualization</strong>. <em>Bioinformatics</em> <strong>25,</strong> 119–120 (2009).</p>
+</div>
+<div>
+<p>95. Dhillon, B. K., Chiu, T. A., Laird, M. R., Langille, M. G. I. &amp; Brinkman, F. S. L. IslandViewer update: Improved genomic island discovery and visualization. <em>Nucleic Acids Research</em> <strong>41,</strong> W129–W132 (2013).</p>
+</div>
+<div>
+<p>96. Fiume, M. <em>et al.</em> Savant Genome Browser 2: visualization and analysis for population-scale genomics. <em>Nucleic Acids Research</em> <strong>40,</strong> W615–W621 (2012).</p>
+</div>
+<div>
+<p>97. Kerkhoven, R., Enckevort, F. H. J. van, Boekhorst, J., Molenaar, D. &amp; Siezen, R. J. Visualization for genomics: the Microbial Genome Viewer. <em>Bioinformatics</em> <strong>20,</strong> 1812–1814 (2004).</p>
+</div>
+<div>
+<p>98. Petkau, A., Stuart-Edwards, M., Stothard, P. &amp; Van Domselaar, G. Interactive microbial genome visualization with GView. <em>Bioinformatics</em> <strong>26,</strong> 3125–3126 (2010).</p>
+</div>
+<div>
+<p>99. Phanstiel, D. H., Boyle, A. P., Araya, C. L. &amp; Snyder, M. P. Sushi.R: flexible, quantitative and integrative genomic visualizations for publication-quality multi-panel figures. <em>Bioinformatics</em> <strong>30,</strong> 2808–2810 (2014).</p>
+</div>
+<div>
+<p>100. Qureshi, M., Rotenberg, E., Stærfeldt, H.-H., Hansson, L. &amp; Ussery, D. W. The Genome Atlas Resource. <em>Computational Systems-Biology and Bioinformatics</em> 141–150 (2010).</p>
+</div>
+<div>
+<p>101. Thorvaldsdóttir, H., Robinson, J. T. &amp; Mesirov, J. P. Integrative Genomics Viewer (IGV): high-performance genomics data visualization and exploration. <em>Briefings in bioinformatics</em> <strong>14,</strong> 178–192 (2013).</p>
+</div>
+<div>
+<p>102. Krzywinski, M. <em>et al.</em> Circos: An information aesthetic for comparative genomics. <em>Genome Research</em> <strong>19,</strong> 1639–1645 (2009).</p>
+</div>
+<div>
+<p>103. Alikhan, N.-F., Petty, N. K., Ben Zakour, N. L. &amp; Beatson, S. A. BLAST Ring Image Generator (BRIG): simple prokaryote genome comparisons. <em>BMC Genomics</em> <strong>12,</strong> 402 (2011).</p>
+</div>
+<div>
+<p>104. Grant, J. R., Arantes, A. S. &amp; Stothard, P. Comparing thousands of circular genomes using the CGView Comparison Tool. <em>BMC Genomics</em> <strong>13,</strong> 202 (2012).</p>
+</div>
+<div>
+<p>105. Hallin, P. F., Binnewies, T. T. &amp; Ussery, D. W. The genome BLASTatlas-a GeneWiz extension for visualization of whole-genome homology. <em>Molecular bioSystems</em> <strong>4,</strong> 363–371 (2008).</p>
+</div>
+<div>
+<p>106. Lechat, P., Souche, E. &amp; Moszer, I. SynTView - an interactive multi-view genome browser for next-generation comparative microorganism genomics. <em>BMC Bioinformatics</em> <strong>14,</strong> 277–277 (2012).</p>
+</div>
+<div>
+<p>107. Louis, A., Muffato, M. &amp; Crollius, H. R. Genomicus: five genome browsers for comparative genomics in eukaryota. <em>Nucleic Acids Research</em> <strong>41,</strong> D700–D705 (2012).</p>
+</div>
+<div>
+<p>108. Meyer, M., Munzner, T. &amp; Pfister, H. MizBee: a multiscale synteny browser. <em>IEEE transactions on visualization and computer graphics</em> <strong>15,</strong> 897–904 (2009).</p>
+</div>
+<div>
+<p>109. Rokicki, J., Knox, D., Dowell, R. D. &amp; Copley, S. D. CodaChrome: a tool for the visualization of proteome conservation across all fully sequenced bacterial genomes. <em>BMC Genomics</em> <strong>15,</strong> 65 (2014).</p>
+</div>
+<div>
+<p>110. Paterson, T. &amp; Law, A. ArkMAP: integrating genomic maps across species and data sources. <em>BMC Bioinformatics</em> <strong>14,</strong> 246–246 (2012).</p>
+</div>
+<div>
+<p>111. Pedersen, B. S., Tang, H. &amp; Freeling, M. Gobe: an interactive, web-based tool for comparative genomic visualization. <em>Bioinformatics</em> <strong>27,</strong> 1015–1016 (2011).</p>
+</div>
+<div>
+<p>112. Revanna, K. V., Chiu, C.-C., Bierschank, E. &amp; Dong, Q. GSV: a web-based genome synteny viewer for customized data. <em>BMC Bioinformatics</em> <strong>12,</strong> 316–316 (2010).</p>
+</div>
+<div>
+<p>113. Sinha, A. U. &amp; Meller, J. Cinteny: flexible analysis and visualization of synteny and genome rearrangements in multiple organisms. <em>BMC Bioinformatics</em> <strong>8,</strong> 82 (2007).</p>
+</div>
+<div>
+<p>114. Sullivan, M. J., Petty, N. K. &amp; Beatson, S. A. <strong>Easyfig: a genome comparison visualizer</strong>. <em>Bioinformatics</em> <strong>27,</strong> 1009–1010 (2011).</p>
+</div>
+<div>
+<p>115. Wang, H., Su, Y., Mackey, A. J., Kraemer, E. T. &amp; Kissinger, J. C. SynView: a GBrowse-compatible approach to visualizing comparative genome data. <em>Bioinformatics</em> <strong>22,</strong> 2308–2309 (2006).</p>
+</div>
+<div>
+<p>116. Blom, J. <em>et al.</em> EDGAR 2.0: an enhanced software platform for comparative gene content analyses. <em>Nucleic Acids Research</em> (2016).</p>
+</div>
+<div>
+<p>117. Méric, G. <em>et al.</em> A reference pan-genome approach to comparative bacterial genomics: identification of novel epidemiological markers in pathogenic Campylobacter. <em>PLoS ONE</em> <strong>9,</strong> e92798–e92798 (2013).</p>
+</div>
+<div>
+<p>118. Hennig, A., Bernhardt, J. &amp; Nieselt, K. Pan-Tetris: an interactive visualisation for Pan-genomes. <em>BMC Bioinformatics</em> <strong>16 Suppl 11,</strong> S3 (2015).</p>
+</div>
+<div>
+<p>119. Cain, A. A., Kosara, R. &amp; Gibas, C. J. GenoSets: Visual Analytic Methods for Comparative Genomics. <em>PLoS ONE</em> <strong>7,</strong> e46401 (2012).</p>
+</div>
+<div>
+<p>120. Herbig, A., Jager, G., Battke, F. &amp; Nieselt, K. GenomeRing: alignment visualization based on SuperGenome coordinates. <em>Bioinformatics</em> <strong>28,</strong> i7–15 (2012).</p>
+</div>
+<div>
+<p>121. Ashburner, M. <em>et al.</em> Gene ontology: tool for the unification of biology. <em>Nature Genetics</em> <strong>25,</strong> 25–29 (2000).</p>
+</div>
+<div>
+<p>122. Lex, A., Gehlenborg, N., Strobelt, H., Vuillemot, R. &amp; Pfister, H. UpSet: Visualization of Intersecting Sets. <em>IEEE transactions on visualization and computer graphics</em> <strong>20,</strong> 1983–1992 (2014).</p>
+</div>
+<div>
+<p>123. Alsallakh, B., Aigner, W., Miksch, S. &amp; Hauser, H. Radial Sets: Interactive Visual Analysis of Large Overlapping Sets. <em>IEEE transactions on visualization and computer graphics</em> <strong>19,</strong> 2496–2505 (2013).</p>
+</div>
+<div>
+<p>124. Jalan, N. <em>et al.</em> Complete Genome Sequence of Xanthomonas citri subsp. citri Strain Aw12879, a Restricted-Host-Range Citrus Canker-Causing Bacterium. <em>Genome announcements</em> <strong>1,</strong> (2013).</p>
+</div>
+<div>
+<p>125. Shoemaker, N. B., Vlamakis, H., Hayes, K. &amp; Salyers, A. A. Evidence for extensive resistance gene transfer among Bacteroides spp. and among Bacteroides and other genera in the human colon. <em>Applied and Environmental Microbiology</em> <strong>67,</strong> 561–568 (2001).</p>
+</div>
+<div>
+<p>126. Schirrmeister, B. E., Antonelli, A. &amp; Bagheri, H. C. The origin of multicellularity in cyanobacteria. <em>BMC Evolutionary Biology</em> <strong>11,</strong> 45–45 (2010).</p>
+</div>
+<div>
+<p>127. Wolf, M., Müller, T., Dandekar, T. &amp; Pollack, J. D. Phylogeny of Firmicutes with special reference to Mycoplasma (Mollicutes) as inferred from phosphoglycerate kinase amino acid sequence data. <em>International journal of systematic and evolutionary microbiology</em> <strong>54,</strong> 871–875 (2004).</p>
+</div>
+<div>
+<p>128. IEEE Computer Society. IEEE Standard for Floating-Point Arithmetic. (2008).</p>
+</div>
+<div>
+<p>129. Brosch, R. <em>et al.</em> A new evolutionary scenario for the Mycobacterium tuberculosis complex. <em>Proceedings of the National Academy of Sciences of the United States of America</em> <strong>99,</strong> 3684–3689 (2002).</p>
+</div>
+<div>
+<p>130. Winglee, K. <em>et al.</em> Whole Genome Sequencing of Mycobacterium africanum Strains from Mali Provides Insights into the Mechanisms of Geographic Restriction. <em>PLOS Neglected Tropical Diseases</em> <strong>10,</strong> e0004332 (2016).</p>
+</div>
+<div>
+<p>131. Periwal, V. <em>et al.</em> Comparative whole-genome analysis of clinical isolates reveals characteristic architecture of Mycobacterium tuberculosis pangenome. <em>PLoS ONE</em> <strong>10,</strong> e0122979–e0122979 (2014).</p>
+</div>
+<div>
+<p>132. Watanabe, S., Shiwa, Y., Itaya, M. &amp; Yoshikawa, H. Complete sequence of the first chimera genome constructed by cloning the whole genome of Synechocystis strain PCC6803 into the Bacillus subtilis 168 genome. <em>Journal of Bacteriology</em> <strong>194,</strong> 7007–7007 (2012).</p>
+</div>
+<div>
+<p>133. Pupo, G. M., Lan, R. &amp; Reeves, P. R. Multiple independent origins of Shigella clones of Escherichia coli and convergent evolution of many of their characteristics. <em>Proceedings of the National Academy of Sciences of the United States of America</em> <strong>97,</strong> 10567–10572 (2000).</p>
+</div>
+<div>
+<p>134. Ogura, Y. <em>et al.</em> Comparative genomics reveal the mechanism of the parallel evolution of O157 and non-O157 enterohemorrhagic Escherichia coli. <em>Proceedings of the National Academy of Sciences of the United States of America</em> <strong>106,</strong> 17939–17944 (2009).</p>
+</div>
+<div>
+<p>135. Sims, G. E. &amp; Kim, S.-H. Whole-genome phylogeny of Escherichia coli/Shigella group by feature frequency profiles (FFPs). <em>Proceedings of the National Academy of Sciences of the United States of America</em> <strong>108,</strong> 8329–8334 (2011).</p>
+</div>
+<div>
+<p>136. Delgado, G. <em>et al.</em> Genetic characterization of atypical Citrobacter freundii. <em>PLoS ONE</em> <strong>8,</strong> e74120–e74120 (2012).</p>
+</div>
+<div>
+<p>137. Petty, N. K. <em>et al.</em> The Citrobacter rodentium genome sequence reveals convergent evolution with human pathogenic Escherichia coli. <em>Journal of Bacteriology</em> <strong>192,</strong> 525–538 (2009).</p>
+</div>
+<div>
+<p>138. Krzywinski, M., Birol, I., Jones, S. J. M. &amp; Marra, M. A. Hive plots–rational approach to visualizing networks. <em>Briefings in bioinformatics</em> <strong>13,</strong> 627–644 (2012).</p>
+</div>
+<div>
+<p>139. Ziemert, N. <em>et al.</em> Diversity and evolution of secondary metabolism in the marine actinomycete genus Salinispora. <em>Proceedings of the National Academy of Sciences of the United States of America</em> <strong>111,</strong> E1130–E1139 (2014).</p>
+</div>
+<div>
+<p>140. Fischbach, M. A., Walsh, C. T. &amp; Clardy, J. The evolution of gene collectives: How natural selection drives chemical innovation. <em>Proceedings of the National Academy of Sciences of the United States of America</em> <strong>105,</strong> 4601–4608 (2008).</p>
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="supdata.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"facebook": true,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "serif",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    if (location.protocol !== "file:" && /^https?:/.test(script.src))
+      script.src  = script.src.replace(/^https?:/, '');
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

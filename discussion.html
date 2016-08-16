@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Pangenome Tools for Rapid, Large-Scale Analysis of Bacterial Genomes</title>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+  <meta name="description" content="a dissertation submitted in partial fulfillment of the requirements for the degree of Doctor of Philosophy in Systems Biology">
+  <meta name="generator" content="bookdown 0.1.4 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Pangenome Tools for Rapid, Large-Scale Analysis of Bacterial Genomes" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="a dissertation submitted in partial fulfillment of the requirements for the degree of Doctor of Philosophy in Systems Biology" />
+  <meta name="github-repo" content="thomasp85/phd_dissertation" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Pangenome Tools for Rapid, Large-Scale Analysis of Bacterial Genomes" />
+  
+  <meta name="twitter:description" content="a dissertation submitted in partial fulfillment of the requirements for the degree of Doctor of Philosophy in Systems Biology" />
+  
+
+<meta name="author" content="Thomas Lin Pedersen">
+
+<meta name="date" content="2016-08-16">
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+</script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="bp.html">
+<link rel="next" href="conclusion.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=EB+Garamond" />
+
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext" />
+
+
+
+<link rel="stylesheet" href="base_style.css" type="text/css" />
+<link rel="stylesheet" href="font_style.css" type="text/css" />
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Frontmatter</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#dedication"><i class="fa fa-check"></i>Dedication</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#abstract"><i class="fa fa-check"></i>Abstract</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#preface"><i class="fa fa-check"></i>Preface</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#work-not-part-of-this-dissertation"><i class="fa fa-check"></i>Work not part of this dissertation</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#preface-for-the-online-version"><i class="fa fa-check"></i>Preface for the online version</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#the-microbial-pangenome"><i class="fa fa-check"></i><b>1.1</b> The Microbial Pangenome</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="intro.html"><a href="intro.html#use-of-pangenomes"><i class="fa fa-check"></i><b>1.1.1</b> Use of Pangenomes</a></li>
+<li class="chapter" data-level="1.1.2" data-path="intro.html"><a href="intro.html#creation-of-pangenomes"><i class="fa fa-check"></i><b>1.1.2</b> Creation of Pangenomes</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#visualizing-genomic-information"><i class="fa fa-check"></i><b>1.2</b> Visualizing Genomic Information</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="intro.html"><a href="intro.html#visualizing-a-genome"><i class="fa fa-check"></i><b>1.2.1</b> Visualizing a Genome</a></li>
+<li class="chapter" data-level="1.2.2" data-path="intro.html"><a href="intro.html#showing-genome-relationships"><i class="fa fa-check"></i><b>1.2.2</b> Showing Genome Relationships</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="intro.html"><a href="intro.html#the-following-chapters"><i class="fa fa-check"></i><b>1.3</b> The Following Chapters</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="fmf.html"><a href="fmf.html"><i class="fa fa-check"></i><b>2</b> How to Build a Pangenome</a></li>
+<li class="chapter" data-level="3" data-path="pv.html"><a href="pv.html"><i class="fa fa-check"></i><b>3</b> What’s in a Pangenome</a></li>
+<li class="chapter" data-level="4" data-path="hs.html"><a href="hs.html"><i class="fa fa-check"></i><b>4</b> It’s Pangenomes All the Way Down</a></li>
+<li class="chapter" data-level="5" data-path="bp.html"><a href="bp.html"><i class="fa fa-check"></i><b>5</b> The Sum of it All</a><ul>
+<li class="chapter" data-level="5.1" data-path="bp.html"><a href="bp.html#an-overview-of-the-bacterial-pangenome"><i class="fa fa-check"></i><b>5.1</b> An Overview of the Bacterial Pangenome</a></li>
+<li class="chapter" data-level="5.2" data-path="bp.html"><a href="bp.html#looking-at-the-panchromosome"><i class="fa fa-check"></i><b>5.2</b> Looking at the Panchromosome</a></li>
+<li class="chapter" data-level="5.3" data-path="bp.html"><a href="bp.html#a-very-large-set-family"><i class="fa fa-check"></i><b>5.3</b> A Very Large Set Family</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="bp.html"><a href="bp.html#the-link-to-taxonomy"><i class="fa fa-check"></i><b>5.3.1</b> The Link to Taxonomy</a></li>
+<li class="chapter" data-level="5.3.2" data-path="bp.html"><a href="bp.html#data-quality-and-lack-thereof"><i class="fa fa-check"></i><b>5.3.2</b> Data Quality and Lack Thereof</a></li>
+<li class="chapter" data-level="5.3.3" data-path="bp.html"><a href="bp.html#the-curious-case-of-escherichia-and-shigella"><i class="fa fa-check"></i><b>5.3.3</b> The Curious Case of Escherichia and Shigella</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="discussion.html"><a href="discussion.html"><i class="fa fa-check"></i><b>6</b> Taking a Step Back</a><ul>
+<li class="chapter" data-level="6.1" data-path="discussion.html"><a href="discussion.html#the-why-of-it-all"><i class="fa fa-check"></i><b>6.1</b> The “Why” of it All</a><ul>
+<li class="chapter" data-level="6.1.1" data-path="discussion.html"><a href="discussion.html#why-you-would-want-a-large-pangenome"><i class="fa fa-check"></i><b>6.1.1</b> Why You Would Want a Large Pangenome</a></li>
+<li class="chapter" data-level="6.1.2" data-path="discussion.html"><a href="discussion.html#why-you-would-want-a-top-taxon-pangenome"><i class="fa fa-check"></i><b>6.1.2</b> Why You Would Want a Top-Taxon Pangenome</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="discussion.html"><a href="discussion.html#the-future-of-large-scale-pangenome-analysis"><i class="fa fa-check"></i><b>6.2</b> The Future of Large-Scale Pangenome Analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="conclusion.html"><a href="conclusion.html"><i class="fa fa-check"></i><b>7</b> This is the End</a></li>
+<li class="chapter" data-level="8" data-path="supplementary-figures.html"><a href="supplementary-figures.html"><i class="fa fa-check"></i><b>8</b> Supplementary Figures</a><ul>
+<li class="chapter" data-level="8.1" data-path="supplementary-figures.html"><a href="supplementary-figures.html#FMFsupfig"><i class="fa fa-check"></i><b>8.1</b> FindMyFriends: A Framework for Fast and Accurate Pangenome Analysis of Thousands of Diverse Genomes</a></li>
+<li class="chapter" data-level="8.2" data-path="supplementary-figures.html"><a href="supplementary-figures.html#PVsupfig"><i class="fa fa-check"></i><b>8.2</b> PanViz: Interactive Visualization of the Structure of Functionally Annotated Pangenomes</a></li>
+<li class="chapter" data-level="8.3" data-path="supplementary-figures.html"><a href="supplementary-figures.html#HSsupfig"><i class="fa fa-check"></i><b>8.3</b> Hierarchical Sets: Analyzing Pangenome Structure through Scalable Set Visualizations</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="supdata.html"><a href="supdata.html"><i class="fa fa-check"></i><b>9</b> Supplementary Data</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Pangenome Tools for Rapid, Large-Scale Analysis of Bacterial Genomes</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="discussion" class="section level1">
+<h1><span class="header-section-number">6</span> Taking a Step Back</h1>
+<blockquote>
+<p>“Facts are not science - as the dictionary is not literature.”</p>
+<p>— Martin H. Fischer, <em>Physicist</em></p>
+</blockquote>
+<p><span class="newthought">Most part of the work related to this dissertation</span> has concerned itself with the <em>How?</em>. How can you calculate a high quality pangenome on accessible hardware? How can the user get seamless access to the underlying data in the face of multi-gigabyte datasets? How can scientists investigate large scale pangenomes in the most efficient way? Less attention has been given to the <em>Why?</em>. While it may seem that the <em>how</em>s inherently implicate the <em>why</em>s, this is only true if we accept that scientists need to concern themselves with huge pangenomes. Thus, a very important <em>why</em> remain: Why would you want to create a pangenome containing thousands of genomes, possible spanning multiple genera, phyla, or even the complete bacterial domain?</p>
+<div id="the-why-of-it-all" class="section level2">
+<h2><span class="header-section-number">6.1</span> The “Why” of it All</h2>
+<p>For all the development within sequencing technology, <span class="abr">CPU</span> speed, algorithms, etc. the world of comparative microbial genomics seems largely content with creating and analyzing small, species-level pangenomes. While it can be argued that the reason for this is simply that pangenome analysis is so closely tied to investigation into species dynamics, this does not explain why species level pangenomes often are created based on a couple of dozen genomes, when more are available. The assertion in this dissertation is that algorithmic complexity has limited large pangenome creation to the few in possession of high performance computing hardware. This has in turn limited the user base for analytical approaches to large pangenomes resulting in less attention to the development of these. Lack of utilities for investigating large pangenomes are then again limiting the perceived value of large pangenomes, making researchers less inclined to spend days or weeks of computation time creating these large pangenomes. While one part of the equation, namely the computational cost of large pangenome analyses, is clearly addressed by <span class="abr">FindMyFriends</span>, the biggest mountain to climb is in convincing the scientific community of the utility of large pangenomes.</p>
+<div id="why-you-would-want-a-large-pangenome" class="section level3">
+<h3><span class="header-section-number">6.1.1</span> Why You Would Want a Large Pangenome</h3>
+<p>Considering only species level pangenomes for the moment, why would you compare 1,000 different genomes when most of the information is captured in the first 50? After all, more data results in longer running post processing, visualizations gets cluttered and confusing, and your computer might run out of memory. The obvious scientific answer is that selecting the best 50 representative genomes a priori can be quite difficult. An often neglected issue in many pangenome studies on the species level is the inherent sampling error that is present when acquiring genomes from public repositories or even sampling in the field. Strains are sequenced for a multitude of reasons but seldom to ensure a balanced representation of a species. As an example, at least 10% of the <em>E. coli</em> genomes included in the bacterial pangenome are derived from <span class="abr">K</span>‑12. In order to cover all bases when creating species level pangenomes everything within reach must be included – redundancy can always be removed at a later stage. It is true that large datasets can be unwieldy to handle and this in turn can impair the efficiency of analysis and interpretation, but this is largely a matter of improving the data structures used to handle this sort of data. <span class="abr">FindMyFriends</span> addresses this to some extend by providing memory efficient pangenome classes with transparent access to all parts of the dataset. This can be improved further by moving the back-end storage to a database using the class extensions provided by <span class="abr">FindMyFriends</span>. In the end though, it would serve the community well to converge towards a common and efficient pangenome file format in the way that other *omics fields have (e.g. mzML within the field of proteomics). While this is a huge undertaking it would remove a lot of duplicated infrastructure work from developers as well as ensuring easy exchange of data between tools and pipelines.</p>
+</div>
+<div id="why-you-would-want-a-top-taxon-pangenome" class="section level3">
+<h3><span class="header-section-number">6.1.2</span> Why You Would Want a Top-Taxon Pangenome</h3>
+<p>While approaches and pipelines needs to be adjusted to accommodate large species-level pangenomes, it is essentially just more of the same. The fundamental biological question remains, such as: What constitute this species? What makes this genome unique? How is the dynamic of the genomes in this species? Is the core well-defined? As pangenomes have been tied to the species level, these types of questions, and how to answer them has become an integral part of pangenome analysis. Moving up to higher taxon level pangenomes results in all of these questions loosing their meaning and the biggest challenge for top-taxon pangenomics will be in defining relevant biological questions that can be investigated using the pangenome.</p>
+<p>Considering for a moment the situation where the research is uniquely interested in a single species, a phylum or domain-level pangenome can still provide additional insight into the species that is invisible in a species-level pangenome. What is the closest related species? Is the species distinction warranted? If so, which part of the core is unique to this species? These question generally pertain to the core of a species and how the core is related to other species. Usually the core is considered the essence of a species but that is only true for the part of the core that is not shared by other species. Only a top-taxon pangenome will reveal that part. Species accessory and singleton gene group interpretation can also be augmented using top-taxon pangenomes. Singletons are often thought to consist in a large part by annotation errors and pseudo genes. The presence of genes, that at the species level are singletons, within other genomes could help in identifying possible mobile elements, or at least remove the notion of them being annotation errors. Identifying which part of the accessory gene groups are shared with other taxons can also shed light on the evolutionary history of a species, both by giving more weight to species-specific accessory gene groups during clustering, but also in identifying strain subsets that have been in close contact with a specific other taxon.</p>
+<p>Despite the utility of top-taxon pangenomes when doing species-level analysis, the largest gain from looking at top-taxon pangenomes comes when the analysis is released from the constraints of a single species. Chapter 4 tries to illustrate some of the overarching questions that can be asked when looking at different aspects of the bacterial pangenome. Panchromosomal analysis can look into how chromosomal segments overlap between genomes. Interestingly 79% of all gene groups are connected in a large component. While mobile elements can play a role in connecting otherwise unconnected chromosomal segments, it could be interesting to investigate this component further in terms of identifying evolutionary events that might have lead to the overall phylum or order divisions. <span class="abr">Hierarchical Set</span> analysis has proved to be a very strong approach to handle the massive amount of data in the bacterial pangenome. Besides providing a meaningful clustering that largely supports the current phylogeny, the intersection stack visualization clearly show the evolution in core size as similarity increases. Much has been said about the possibility of a pangenome based species definition. Such a universal definition is not apparent from the bacterial pangenome as many species undergo a very gradual falloff in core size as they are merged with their nearest species (see e.g. figure <a href="bp.html#fig:firmintersect">5.8</a> on page ). Coupled with this is of course again the notion of acquiring a balanced pangenome for such an investigation. Any species definition based on the current bacterial pangenome will largely be based on the dynamics of the best represented species (see figure <a href="bp.html#fig:treemap">5.1</a>) rather than a global tendency, as many species are only represented by a single or a few genomes. Instead of forcing structure revealed by pangenomes into the current phylogeny, the bacterial pangenome can instead be used to define a new, supplementary hierarchy based on <span class="abr">Hierarchical Set</span> analysis. The independent cluster concept is a natural division of the genomes represented in the pangenome, as it constitutes the largest groupings containing a core. While this imposes an upper bound on the clustering, largely equivalent to the order level, the resulting clusters have a strong genomic interpretation. It might also be possible to define a tight clustering between closely related genomes by either looking at sudden drops in the rate of core size increase, or alternatively based on the set family heterogeneity measure defined in chapter 3. A more balanced dataset is needed to justify any global threshold definition though. The notion of outlying elements introduced as part of the <span class="abr">Hierarchical Set</span> analysis holds a lot of power in visualizing the similarities between genomes that is not captured in a tree structure and has been shown to easily detect problematic genome sequences as well as highlighting interesting inter-species relationships. The investigation into the <em>Shigella/Escherichia</em> cluster showed a very strong correspondence between outlying elements in <span class="abr">Hierarchical Sets</span> and mobile elements in a genome context by mapping the elements back to the panchromosome data structure. This interoperability between different data structures relating different aspects of the pangenome with each other is key in unraveling the knowledge captured in top-taxon level pangenomes. Much work is still needed in terms of defining meaningful statistics and classifications to aid in the analysis of large heterogeneous pangenomes.</p>
+</div>
+</div>
+<div id="the-future-of-large-scale-pangenome-analysis" class="section level2">
+<h2><span class="header-section-number">6.2</span> The Future of Large-Scale Pangenome Analysis</h2>
+<p>While <span class="abr">FindMyFriends</span> lays down the foundation for a future of large pangenome analysis by providing fast and accurate pangenome creation, memory efficient data handling and transparent access to all parts of the pangenome, there is still much work that needs to be done. Despite all the effort that have been put into optimizing sequence similarity based clustering of genes, experience with <span class="abr">FindMyFriends</span> has shown that chromosomal neighborhood is the deciding factor when arriving at the correct clustering. To put it bluntly, any method capable of creating a coarse clustering of sequences based on similarity will suffice for the first step in the <span class="abr">FindMyFriends</span> clustering. In spite of this, algorithms for neighborhood based clustering have received relative little attention and exposure. The speed of <span class="abr">CD‑Hit</span><span class="citation"><sup><a href="#ref-Li:2006hr">88</a></sup></span>, which is used for the preliminary grouping in <span class="abr">FindMyFriends</span>, makes the neighborhood based clustering the rate limiting step and further speed gains are likely to be found in improving this algorithm or its implementation. Fortunately, the modular and expandable nature of the <span class="abr">FindMyFriends</span> framework makes it easy to incorporate improvements or completely new algorithms for the different steps of the analysis pipeline. The idea of merging the pangenome with chromosomal position, in <span class="abr">FindMyFriends</span> called a panchromosome, offers an alternative graph based data structure that opens up for novel types of analyses. <span class="abr">Roary</span><span class="citation"><sup><a href="#ref-Page:2015ds">65</a></sup></span> also supports outputting this type of data representation and a similar concept is investigated by <span class="citation"><a href="#ref-Chan:2014js">42</a></span> using <span class="abr">PanOCT</span><span class="citation"><sup><a href="#ref-Fouts:2012fs">66</a></sup></span>. Currently, <span class="abr">FindMyFriends</span> uses the panchromosome to detect local chromosomal area with variation, usually signifying insertion/deletion and frameshift events, as well as in automatically correcting some grouping errors. Hopefully other algorithms based on this data structure will offer novel possibilities, both within visualization and classification of gene groups. This is still a relatively new area within pangenome analysis so it is an open question whether it will be widely adopted. The value in the panchromosome representation during the investigation into the bacterial pangenome was very clear though, so it is my hope that further work will be invested in it.</p>
+<p>Visualizations plays an integral part in the analysis and communication of biological data. Despite this, relatively little attention has been given to development of truly novel approaches to pangenome visualization, even as the current approaches fail to scale with the increase in available data. <span class="abr">PanViz</span> provides a novel approach to gaining an overview of the distribution of gene groups within different pangenome subsets, as well as communicating the differences between subsets using animations. The fundamental visualization approaches are very scalable due to the reliance on summary statistics, but the currently employed genome and pangenome navigation technique puts a limit to the size of the pangenome being visualized. Further work should be put on defining a scalable navigation scheme that accommodates an unlimited number of genomes. The current focus of the visualization is in communicating the structure of pangenomes and allow for intuitive and powerful gene group queries. These features could be further enhanced by improving the visual cues given to differences between pangenome subsets, allowing definition of pangenome subsets outside of the hierarchical structure, as well as enhancing the visual querying mechanism. The way <span class="abr">GenoSets</span><span class="citation"><sup><a href="#ref-Cain:2012cd">119</a></sup></span> visually builds up the queries using parallel sets gives a great overview of how a certain selection of gene groups has been reached, a feature that is lacking in <span class="abr">PanViz</span> despite the many overlaps there is in the querying mechanisms of the two visualizations.</p>
+<p>Clustering and classification are essential approaches to organizing and decluttering visualizations of large datasets. <span class="abr">Hierarchical Sets</span> exemplifies this by simultaneously providing a clustering of the genomes/sets and a classification of some of the elements/gene groups as outlying elements. It could be worthwhile to investigate additional classifications of elements, in addition to how they deviate, based on their presence/absence pattern in the set hierarchy. An obvious addition would be to classify elements based on uniqueness to certain branches, a measure that could aid in visualizing the uniqueness of the branch itself. Another possibility is to somehow look at the symmetric difference between branches in terms of their intersection or union in order to measure the distance between branch points. Besides looking at additional element classification systems, additional clustering approaches could be of interest. While the agglomerative intersection-optimizing algorithm currently implemented shows great promise in resolving genomes at genus and species level, other approaches could illuminate alternative features. One approach could be to define a divisive clustering that recursively minimized the number of outlying elements between sub-clusters. Such a clustering would have higher complexity than the current one, but could help in showing whether optimizing core size during clustering automatically minimized the degree of deviation.</p>
+<p><span class="abr">Hierarchical Set</span> analysis is essentially oblivious to any biological meaning of the data as it is based purely on set algebra. While the results it provides contain ample of biological insight, the Infinitely Many Genes model<span class="citation"><sup><a href="#ref-Baumdicker:2011du">56</a></sup></span> has shown the value of modeling data based on biologically meaningful parameters, both in terms of interpretation and quality of the final model. Whether infusing the clustering applied by <span class="abr">Hierarchical Sets</span> with more biological information would yield any benefits is an open question. Still, if the clustering did not improve it would in essence indicate that core size is a good proxy for evolutionary relationship, making the effort worthwhile. The current approaches to modeling pangenome data, e.g. Heaps Law<span class="citation"><sup><a href="#ref-Tettelin:2008gc">54</a></sup></span>, binomial mixture models<span class="citation"><sup><a href="#ref-Snipen:2009cg">55</a></sup></span>, and Infinitely Many Genes model, are tied to species level pangenomes and does not transfer well to very heterogeneous pangenomes as these violates the assumptions of the models. One approach to model more heterogeneous pangenomes would be to look for the first branch points in the <span class="abr">Hierarchical Sets</span> clustering where the current models begin to describe the data in a meaningful way. Potentially this could even provide a new species definition, e.g. <em>a species is defined as the most distant delineage point where the pangenome remains well defined</em>. Another possibility would be to try to model the clustering directly, thus extracting descriptive parameters for each branch point that could then be used to define thresholds for different genome classification hierarchies.</p>
+\vspace{1em}
+<p>In the end the success of tools and approaches is not only based on their merits, but whether they end up attracting a sustainable number of users. Practitioners of pangenome analyses have proven very resilient to change and venerable algorithms such as <span class="abr">OrthoMCL</span><span class="citation"><sup><a href="#ref-Li:2003en">63</a></sup></span> are still in heavy use today despite having been superseded by faster and more accurate algorithms. Indeed, new tools that use <span class="abr">OrthoMCL</span> as a possible back-end are still being released<span class="citation"><sup><a href="#ref-Chaudhari:2015bj">83</a></sup></span>. New tools need to present a very compelling argument for switching away from a familiar and well understood legacy tool. This is especially pertinent for <span class="abr">FindMyFriends</span> as both <span class="abr">PanViz</span> and <span class="abr">Hierarchical Sets</span> are supplementary tools that do not need to replace existing workflows. I hope that the features of <span class="abr">FindMyFriends</span> resonates with the community and that the modular nature of the framework allows it stay relevant in the fast-changing world of sequence analysis.</p>
+
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-Li:2006hr">
+<p>88. Li, W. &amp; Godzik, A. Cd-hit: a fast program for clustering and comparing large sets of protein or nucleotide sequences. <em>Bioinformatics</em> <strong>22,</strong> 1658–1659 (2006).</p>
+</div>
+<div id="ref-Page:2015ds">
+<p>65. Page, A. J. <em>et al.</em> Roary: rapid large-scale prokaryote pan genome analysis. <em>Bioinformatics</em> btv421 (2015).</p>
+</div>
+<div id="ref-Chan:2014js">
+<p>42. Chan, A. P. <em>et al.</em> A novel method of consensus pan-chromosome assembly and large-scale comparative analysis reveal the highly flexible pan-genome of Acinetobacter baumannii. <em>Genome biology</em> <strong>16,</strong> 143–143 (2014).</p>
+</div>
+<div id="ref-Fouts:2012fs">
+<p>66. Fouts, D. E., Brinkac, L., Beck, E., Inman, J. &amp; Sutton, G. PanOCT: automated clustering of orthologs using conserved gene neighborhood for pan-genomic analysis of bacterial strains and closely related species. <em>Nucleic Acids Research</em> (2012).</p>
+</div>
+<div id="ref-Cain:2012cd">
+<p>119. Cain, A. A., Kosara, R. &amp; Gibas, C. J. GenoSets: Visual Analytic Methods for Comparative Genomics. <em>PLoS ONE</em> <strong>7,</strong> e46401 (2012).</p>
+</div>
+<div id="ref-Baumdicker:2011du">
+<p>56. Baumdicker, F., Hess, W. R. &amp; Pfaffelhuber, P. The infinitely many genes model for the distributed genome of bacteria. <em>Genome Biology and Evolution</em> <strong>4,</strong> 443–456 (2011).</p>
+</div>
+<div id="ref-Tettelin:2008gc">
+<p>54. Tettelin, H., Riley, D., Cattuto, C. &amp; Medini, D. Comparative genomics: the bacterial pan-genome. <em>Current opinion in microbiology</em> <strong>11,</strong> 472–477 (2008).</p>
+</div>
+<div id="ref-Snipen:2009cg">
+<p>55. Snipen, L. G., Almøy, T. &amp; Ussery, D. W. Microbial comparative pan-genomics using binomial mixture models. <em>BMC Genomics</em> <strong>10,</strong> 385 (2009).</p>
+</div>
+<div id="ref-Li:2003en">
+<p>63. Li, L., Stoeckert, C. J. &amp; Roos, D. S. OrthoMCL: identification of ortholog groups for eukaryotic genomes. <em>Genome Research</em> <strong>13,</strong> 2178–2189 (2003).</p>
+</div>
+<div id="ref-Chaudhari:2015bj">
+<p>83. Chaudhari, N. M., Gupta, V. K. &amp; Dutta, C. BPGA- an ultra-fast pan-genome analysis pipeline. <em>Scientific reports</em> <strong>6,</strong> 24373–24373 (2015).</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="bp.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="conclusion.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
+
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"facebook": true,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "serif",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    if (location.protocol !== "file:" && /^https?:/.test(script.src))
+      script.src  = script.src.replace(/^https?:/, '');
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
