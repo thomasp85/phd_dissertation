@@ -9,7 +9,7 @@ bibliography: [references.bib, packages.bib]
 biblio-style: apalike
 csl: nature.csl
 link-citations: yes
-github-repo: thomasp85/thesis
+github-repo: thomasp85/phd_dissertation
 description: "a dissertation submitted in partial fulfillment of the requirements for the degree of Doctor of Philosophy in Systems Biology"
 ---
 
