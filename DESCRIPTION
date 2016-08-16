@@ -1,0 +1,5 @@
+Package: phd_dissertation
+Title: Pangenome Tools for Rapid, Large-Scale Analysis of Bacterial Genomes
+Version: 0.0.1
+Imports: bookdown, ggplot2
+Remotes: rstudio/bookdown
