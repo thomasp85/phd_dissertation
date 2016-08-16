@@ -1,0 +1,15 @@
+bookdown::gitbook:
+  css: [base_style.css, font_style.css, style.css]
+  includes:
+    in_header: header.html
+  config:
+    fontsettings:
+      theme: white
+      family: serif
+      size: 2
+bookdown::pdf_book:
+  includes:
+    in_header: preamble.tex
+  latex_engine: xelatex
+  citation_package: natbib
+bookdown::epub_book: default

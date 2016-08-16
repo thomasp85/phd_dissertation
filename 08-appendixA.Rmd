@@ -1,0 +1,110 @@
+# Supplementary Figures
+\renewcommand{\thefigure}{S\arabic{figure}}
+
+This appendix contains the supplementary figures from the three articles presented in this dissertation. The numbering of the figures is as referenced in their respective articles, thus it does not follow the figure numbering of the dissertation. 
+\newpage
+
+\vspace*{\fill}
+## FindMyFriends: A Framework for Fast and Accurate Pangenome Analysis of Thousands of Diverse Genomes {#FMFsupfig}
+\vspace*{\fill}
+\newpage
+\setcounter{figure}{0}
+
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{figures/FMF/figure_S1}
+\caption[]{The evolution in cosine similarity as K is increased from 3 to 7. Each line corresponds to a gene pair. It can be seen that the strongest difference happens when increasing K from 3 to 4.}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{figures/FMF/figure_S2}
+\caption[]{The distribution of similarity values using cosine similarity with K=3 and K=4, as well as BLAST derived similarity values.}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{figures/FMF/figure_S3}
+\caption[]{A scatterplot showing the relation between K-mer and BLAST derived similarity values.}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{figures/FMF/figure_S4}
+\caption[]{Semi-log plot of number of ORFs in complete bacterial genomes and the number/percent of paralog. The red line represents the number of ORFs; the blue line represents the number of parlogs. The small panel on the top-left shows the boxplot of distribution of papralog percent of the dataset (4408 complete bacterial genomes that have more than 1000 ORFs).}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{figures/FMF/figure_S5}
+\caption[]{Semi-log plot of number of members of individual protein families and the number of genomes that associated on the individual protein family. Red crosses indicate the number of members of individual protein family. The sizes of the crosses show the faction of common PfamA domains. The blue line represents the number of genomes associate with the individual protein family. The small panel on the top-left shows the histogram of the distribution of common pfam faction. Only protein families with more then a hundred members are included in the plot.}
+\end{figure}
+
+\clearpage
+
+\vspace*{\fill}
+## PanViz: Interactive Visualization of the Structure of Functionally Annotated Pangenomes {#PVsupfig}
+\vspace*{\fill}
+\newpage
+\setcounter{figure}{0}
+
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{figures/PV/figure_S1.png}
+\caption[]{Overview of PanViz. \textbf{A:} Scatter plot and dendrogram overview of the genomes in the pangenome, both based on gene group presence/absence. \textbf{B:} Legends and lookup information. \textbf{C:} Gene group table and set operation controls. Set operations are performed between the current content of the table and the content of the visual element that is clicked. \textbf{D-F:} The different states of the pangenome view. \textbf{D:} Radial representation of the top level GO terms within the main pangenome groups. \textbf{E:} Comparison between content of genomes and pangenome. \textbf{F:} Zoomable treemap representing the GO terms in different parts of the pangenome.}
+\end{figure}
+
+\clearpage
+
+\vspace*{\fill}
+## Hierarchical Sets: Analyzing Pangenome Structure through Scalable Set Visualizations {#HSsupfig}
+\vspace*{\fill}
+\newpage
+\setcounter{figure}{0}
+
+\begin{figure}
+\centering
+\includegraphics[width=0.8\textwidth]{figures/HS/figure_S1.pdf}
+\caption[]{The result of applying three different clustering algorithms and three different distance measures on the pangenome matrix used in the paper. The ordering is not the same across plots, and the figure serves mainly to show how standard clustering of this type of data is "top-heavy", i.e. the top-most branch points are at almost equal values.}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{figures/HS/figure_S2.pdf}
+\caption[]{A matrix plot showing pairwise statistics for the 46 sets in the pangenome. The top half shows the intersection size of the set family defined by the pairs nearest common branch point as the background shading, while showing the intersection size of the pair as a smaller rectangle on top. The bottom half shows the pairwise union size, as well as showing the hierarchy defined by the clustering as white lines.}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{figures/HS/figure_S3.pdf}
+\caption[]{A scatter plot showing all outlying elements as a function of how often they are present in a set and for how many set pairs they are considered outlying.}
+\end{figure}
+
+\clearpage
+
+# Supplementary Data  {#supdata}
+Most of the data utilized in this dissertation does not fit into a printed format and is thus instead made available for download. The folder is accessible through:
+
+\vspace{1em}
+\begin{center}
+\url{https://goo.gl/WCGe1H}
+\end{center}
+\vspace{1em}
+
+\noindent
+and contains the following data:
+
+*CompleteGenbank.tar.gz*
+:   An archive with all the protein fasta files used for creating the bacterial domain pangenome. The files are named by their checksum and divided into subfolders based on their filename.
+
+*CompleteGenbank_meta.xlsx*
+:   A spreadsheet with metadata about each genome in the archive described above. This file links the checksum derived filename with taxonomy and assembly information.
+
+*bac_pan_slim.rds*
+:   An RDS file containing the pangenome created by ~~FindMyFriends~~ based on the genomes in the above archive. The file contains a pgSlimLoc object that can be investigated using ~~FindMyFriends~~. Pangenome matrix, panchromosome, and other representations can all be derived from this object.
+
+*hierarchical_set_res.rds*
+:   An RDS file containing the result of performing ~~Hierarchical Set~~ analysis on the pangenome in the file above. The file contain a HierarchicalSet object that can be further investigated using ~~Hierarchical Sets~~.
+
+*PanViz.html*
+:   An ~~HTML~~ file containing the PanViz visualization created in chapter 2. The file is fully self-contained and can be opened and explored in any modern browser supporting ~~HTML5~~.

@@ -1,0 +1,66 @@
+--- 
+title: "Pangenome Tools for Rapid, Large-Scale Analysis of Bacterial Genomes"
+author: "Thomas Lin Pedersen"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+bibliography: [references.bib, packages.bib]
+biblio-style: apalike
+csl: nature.csl
+link-citations: yes
+github-repo: thomasp85/thesis
+description: "a dissertation submitted in partial fulfillment of the requirements for the degree of Doctor of Philosophy in Systems Biology"
+---
+
+# Frontmatter {-}
+
+## Dedication {-}
+This dissertation is dedicated to my two amazing sons, Oliver and Adrian, and my fantastic wife, Katie, who have never failed to remind me that the life outside of a PhD is important, amazing, and ultimately the reason for doing research in the first place...
+
+## Abstract {-}
+<span class="newthought">The massive influx of bacterial genome sequences</span>, made possible by advances in sequencing technology, are putting pressure on the tools and algorithms used to analyse them. Many current approaches to creating and analysing pangenomes are not able to sufficiently handle the available amount of data, causing missed insight and opportunities. This dissertation presents three novel tools that adresses both creation and analysis of large pangenomes. 
+
+<span class="abr">FindMyFriends</span> provides a framework that is capable of handling thousands of genomes while providing transparent access to the underlying data. <span class="abr">PanViz</span> is an engaging interactive visualization tool that allows users to investigate the structure of functionally annotated pangenome. <span class="abr">Hierarchical Sets</span> is a combined clustering and visualization tool for large collections of sets such as pangenomes. The utility of the tools are showcased by creating the full bacterial pangenome based on 4,770 genomes and investigating it using the developed tools. The creation of the pangenome could be finished in 99 hours on standard accessible hardware using a single core with <span class="abr">FindMyFriends</span>. Analysis using <span class="abr">Hierarchical Sets</span> revealed 225 clusters of genomes with no overlap in their core. The existance of a core was generally linked to genus level and below. The clustering, as well as outlying element analysis, provided by <span class="abr">Hierarchical Sets</span> was used to investigate the relationship of a subset of *Enterobacteriales*, revealing a distinct lineage separating *Escherichia* and *Shigella*. Still, it was shown that the two genera share a large collection of mobile elements, a trait that could explain the difficulty in resolving the evolutionary relationship between them. 
+
+It is found that the tools and approaches presented herein offers a powerful solution to working with large-scale pangenomes. Further research is needed in order to develop a richer set of models and algorithms to extract information from large-scale pangenomes, and the modular nature of <span class="abr">FindMyFriends</span> makes it a strong platform to support this goal.
+
+## Preface {-}
+<span class="newthought">This dissertation was supposed to be</span> fully concerned with computational proteomics. The reasons why you are about to read a dissertation concerning comparative microbial genomics instead are many and multifaceted and largely irrelevant. The bottom line is that much of the work done during the first two years are not presented in this dissertation as it concern another research area altogether. Despite not being the initial focus of the project I've thoroughly enjoyed immersing myself in the world of comparative genomics. The cornerstone of my scientific interest is in bridging the gap between data and scientist, through development of tools and visualizations that facilitates scientific creativity instead of data overload. To this end the field of comparative microbial genomics has been a perfect subject of my attention and I hope my work will resonate with the community and empower researchers to do more with their genomics data.
+
+Due to the duality of my project the contributions of some of the people given thanks below are not obvious in the dissertation. My last supervisor at Chr. Hansen, Maria Månnson, is especially responsible for helping me get through this last, admittedly stressful, year, though you would be hard pressed getting her to acknowledge that. This project has also marked my entry into the world of open source development, especially within the <span class="abr">R</span> and <span class="abr">Bioconductor</span> communities, and a lot of welcoming people have made this a thoroughly enjoyable experience. Laurent Gatto from Cambridge, Steffen Neumann from IPB Halle, and Vladislav Petyuk from Pacific Northwest National Laboratory are particularly responsible for easing my way into the <span class="abr">Bioconductor</span> community, while a multitude of people - no one named, none forgotten - has ensured a positive entry into the wider <span class="abr">R</span> community. The Proteomics Core Facility at Biozentrum, Basel, was responsible for an absolutely fantastic and enlightening stay during the first part of my project, so many thanks to Alexander Schmidt, Timo Glatter, Erik Ahrné, and Lars Molzahn. Lastly a warm thanks to the Visual Computing Group at Harvard, especially Hendrik Strobelt and Kasper Dinkla, for responding to my unsolicited plea for assistance in evaluating and discussing the merits of <span class="abr">Hierarchical Sets</span>.
+
+### Work not part of this dissertation {-}
+
+#### Published articles {-}
+Børsting, M. W., Qvist, K. B., Brockmann, E., Vindeløv, J., Pedersen, T. L., Vogensen, F. K., Ardö, Y. (2014). Classification of Lactococcus lactis cell envelope proteinase based on gene sequencing, peptides formed after hydrolysis of milk, and computer modeling. *Journal of Dairy Science*, 98(1), 68–77. http://doi.org/10.3168/jds.2014-8517
+
+Jun, S.-R., Leuze, M. R., Nookaew, I., Uberbacher, E. C., Land, M., Zhang, Q., Wanchai, V., Chai, J., Nielsen, M., Trolle, T., Lund, O., Buzard, G. S., Pedersen, T. D., Wassenaar, T. M., Ussery D. W. (2015). Ebolavirus comparative genomics. *FEMS Microbiology Reviews*, 39(5), 764–778. http://doi.org/10.1093/femsre/fuv031
+
+#### Published software {-}
+
+##### Bioconductor {-}
+Pedersen T. L., Petyuk, V. A., Gatto L., Gibb. S. (2015). mzID: An mzIdentML parser for R. R package version 1.8.0. http://bioconductor.org/packages/mzID/
+
+Pedersen T. L. (2015). MSGFplus: An interface between R and MS-GF+. R package version 1.4.0. http://bioconductor.org/packages/MSGFplus/
+
+Pedersen T. L. (2015). MSGFgui: A shiny GUI for MSGFplus. R package version 1.4.0. http://bioconductor.org/packages/MSGFgui/
+
+Gatto L., Pedersen T. L., Gibb. S., Petyuk, V. A. (2015). RforProteomics: Companion package to the "Using R and Bioconductor for proteomics data analysis" publication. R package version 1.8.0. http://bioconductor.org/packages/RforProteomics/
+
+##### CRAN {-}
+Pedersen T. L., Hughes, S. (2015). densityClust: Clustering by Fast Search and Find of Density Peaks. R package version 0.2.1 https://cran.r-project.org/package=densityClust
+
+Pedersen T. L. (2015). shinyFiles: A Server-Side File System Viewer For Shiny. R package version 0.6.0. https://cran.r-project.org/package=shinyFiles
+
+Pedersen T. L. (2016). tweenr: Interpolate Data for Smooth Animations. R package version 0.1.3. https://cran.r-project.org/package=tweenr
+
+#### Unpublished software {-}
+Pedersen T. L. (2015). MSsary: LC-MS/MS analysis in R. R package version 0.0.10. https://github.com/thomasp85/MSsary
+
+Pedersen T. L. (2016). ggforce: Accelerating ggplot2. R package version 0.0.2. https://github.com/thomasp85/ggforce
+
+Pedersen T. L. (2016). ggraph: An Implementation of Grammar of Graphics for Graphs and Networks. R package version 0.1.1. https://github.com/thomasp85/ggraph
+
+## Preface for the online version {-}
+yada
